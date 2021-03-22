@@ -13,8 +13,6 @@ const LeftWrapper = styled.div`
 
 `
 const ProfileInfo = styled.div`
-    //border: 3px groove grey;
-    //background-color:white;
     z-index:1;
     box-shadow: 0px 0px 2px 2px rgb(205,197,197);
     border-radius: 3px;
@@ -50,9 +48,10 @@ const UserDesc = styled.p`
 `
 const OtherOptions = styled.div`
     display:flex;
-    align-items:center;
-    padding:5px;
-    justify-content: space-between;
+    justify-content: flex-start;
+    //background-color:red;
+    margin: 15px 0px;
+    
 `
 const UserOptions = styled.div`
     display:flex;
@@ -62,21 +61,25 @@ const UserOptions = styled.div`
     
     
 `
+
 const LeftText = styled.p`
     font-size: ${fontSize[14]};
     color: rgb(97,92,92);
     font-weight: bold;
     
     
+    
 `
 const OtherIcons = styled.div`
-    //margin-right:-100px;
+    display:flex;
+    width:20%;
+    
 `
 const UserOptionsComponents = styled.div`
     text-align:left;
     padding:5px;
     width:150px;
-    //background-color:yellow;
+   
     
 `
 const BorderedIcon = styled.div`
@@ -141,36 +144,36 @@ export const LeftMenu: FC = () =>{
             </ProfileInfo>
             <OtherInfo>
                 <OtherOptions>
-                    <OtherIcons>
-                        <img src="./icons/publications.png" alt="Publications"/> 
-                    </OtherIcons>
-                    <UserOptionsComponents>
+                        <OtherIcons>
+                            <img src="./icons/publications.png" alt="Publications"/> 
+                        </OtherIcons>
+                        <UserOptionsComponents>
                             <LeftText>
                                 Publications
                             </LeftText>
-                    </UserOptionsComponents>
+                        </UserOptionsComponents>
                     
                 </OtherOptions>
                 <OtherOptions>
-                    <OtherIcons>
-                        <img src="./icons/ecosystem.png" alt="Ecosystem"/>
-                    </OtherIcons>
-                    <UserOptionsComponents>
+                        <OtherIcons>
+                            <img src="./icons/ecosystem.png" alt="Ecosystem"/>
+                        </OtherIcons>
+                        <UserOptionsComponents>
                             <LeftText>
                                Ecosystem
                             </LeftText>
-                    </UserOptionsComponents>
+                        </UserOptionsComponents>
                     
                 </OtherOptions>
                 <OtherOptions>
-                    <OtherIcons>
-                        <img src="./icons/entities.png" alt="Entities"/> 
-                    </OtherIcons>
-                    <UserOptionsComponents>
+                        <OtherIcons>
+                            <img src="./icons/entities.png" alt="Entities"/> 
+                        </OtherIcons>
+                        <UserOptionsComponents>
                             <LeftText>
                                 Entities
                             </LeftText>
-                    </UserOptionsComponents>
+                        </UserOptionsComponents>
                     
                 </OtherOptions>
                 
