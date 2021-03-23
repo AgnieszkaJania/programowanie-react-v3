@@ -11,12 +11,9 @@ const InnerWrapper = styled.div`
     justify-content:space-between;
     height:50px;
     z-index:1;
-    box-shadow: 0px 0px 4px 4px rgb(205,197,197);
+    box-shadow: 0px 0px 4px 4px ${Colors.shadowColor};
     padding:3px;
     
-    
-    
-
 `;
 
 const RightIcons = styled.div`
@@ -40,12 +37,12 @@ const SelectOption = styled.select`
 
 `
 const InputSearch = styled.input`
-    background-color: white;
+    background-color: ${Colors.white};
     background-image: url('./icons/search.png');
     background-position: right center; 
     background-repeat: no-repeat;
     padding:5px;
-    border: 2px solid lightgrey;
+    border: 2px solid ${Colors.lightgrey};
     border-radius:5px;
     width:500px;
     text-align:center;
@@ -53,7 +50,7 @@ const InputSearch = styled.input`
 `
 const RoundImage = styled.div`
     border-radius:50%;
-    background-color:lightgrey;
+    background-color:${Colors.lightgrey};
     padding:10px;
     display:flex;   
 `

@@ -1,12 +1,13 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
 import { fontSize } from '../../styledHelpers/FontSizes';
-import { Wrapper } from '../../styledHelpers/Components';
+import { Colors } from '../../styledHelpers/Colors';
+
 
 const LeftWrapper = styled.div`
     float:left;
     width: 20%;
-    background-color:white;
+    background-color:${Colors.white};
     font-family: Arial, Helvetica, sans-serif;
     height:100%;
     
@@ -14,18 +15,18 @@ const LeftWrapper = styled.div`
 `
 const ProfileInfo = styled.div`
     z-index:1;
-    box-shadow: 0px 0px 2px 2px rgb(205,197,197);
+    box-shadow: 0px 0px 2px 2px ${Colors.shadowColor};
     border-radius: 3px;
     
 `
 const OtherInfo = styled.div`
     padding:10px;
-    background-color:rgb(241,249,248);
+    background-color:${Colors.backgroundColor};
     margin-top:4px;
 `
 const UpperProfile = styled.div`
 
-    border-bottom: 1px solid lightgrey; 
+    border-bottom: 1px solid ${Colors.lightgrey}; 
     display: flex;
     align-items: center;
     flex-direction:column;
@@ -37,13 +38,13 @@ const LowerProfile = styled.div`
     padding:10px;
 `
 const UserName = styled.p`
-    color:blue;
+    color:${Colors.blue};
     font-weight: bold;
     font-size: ${fontSize[14]};
     
 `
 const UserDesc = styled.p`
-    color:lightgrey;
+    color:${Colors.lightgrey};
     font-size: ${fontSize[10]};
 `
 const OtherOptions = styled.div`
@@ -64,7 +65,7 @@ const UserOptions = styled.div`
 
 const LeftText = styled.p`
     font-size: ${fontSize[14]};
-    color: rgb(97,92,92);
+    color: ${Colors.lightblack};
     font-weight: bold;
     
     
