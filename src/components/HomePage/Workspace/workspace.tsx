@@ -6,13 +6,13 @@ const MainBoardWrapper = styled.div`
     display:flex;
     flex-direction:column;
     margin-left:30px;
-    //background-color:yellow;
+    background-color:yellow;
     width:70%;
 `
 const LatestPublicationWrapper = styled.div`
     width:100%;
     background-color:${Colors.white};
-    z-index:1;
+    //z-index:1;
     box-shadow: 0px 0px 2px 2px ${Colors.shadowColor};
     display:flex;
     
@@ -41,7 +41,22 @@ const ImageText = styled.div`
 const TitleWrapper = styled.div`
     
 `
-
+interface ITextContentProps{
+    name: string;
+    surname: string;
+    age: number;
+}
+const MyFunc: FC<ITextContentProps> = (props) =>{
+    return(
+        <div>
+            <div>{props.name}</div>
+            <div>{props.surname}</div>
+            <div>{props.age}</div>
+        
+        </div>
+        
+    )
+}
 
 export const Workspace: FC = () =>{
     
@@ -52,6 +67,8 @@ export const Workspace: FC = () =>{
                 <LatestPubTextWrapper>
                     <TitleWrapper>
                          Latest publications
+                         <MyFunc name="Aga" surname="Jania" age={26}/>
+                         
                     </TitleWrapper>
                 </LatestPubTextWrapper>
 

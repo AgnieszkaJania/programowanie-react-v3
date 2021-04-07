@@ -4,12 +4,12 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Reset } from 'styled-reset';
-import { HomePage } from './components/HomePage/home_page';
+
 
 ReactDOM.render(
   <>
     <Reset />
-    <HomePage />
+    <App />
   </>,
   document.getElementById('root')
 );

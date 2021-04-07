@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Colors } from '../../styledHelpers/Colors';
 import { TopNav } from '../TopNav/top_nav';
 import { LeftMenu } from '../LeftMenu/left_menu';
-import { Workspace } from './Workspace/workspace';
+//import { Workspace } from './Workspace/workspace';
 
 const Wrapper = styled.div`
     background-color: ${Colors.white};
@@ -22,14 +22,14 @@ const Content = styled.div`
 
 
 
-export const HomePage: FC = () =>{
+export const Publications: FC = () =>{
     
     return(
         <Wrapper>
-            <TopNav chosenItem="Home"/>
+            <TopNav chosenItem="Publications" iconName="publications.png"/>
             <Content>
                 <LeftMenu/>
-                <Workspace/>
+               Publikacja
                 
             </Content>
         </Wrapper>

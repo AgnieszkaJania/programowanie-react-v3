@@ -71,7 +71,7 @@ const LeftText = styled.p`
     
     
 `
-const OtherIcons = styled.div`
+export const OtherIcons = styled.div`
     display:flex;
     width:20%;
     
