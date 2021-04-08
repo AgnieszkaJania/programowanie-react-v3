@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import styled from 'styled-components';
 import { fontSize } from '../../styledHelpers/FontSizes';
 import { Colors } from '../../styledHelpers/Colors';
+import { Link } from 'react-router-dom';
 
 
 const LeftWrapper = styled.div`
@@ -25,14 +26,11 @@ const OtherInfo = styled.div`
     margin-top:4px;
 `
 const UpperProfile = styled.div`
-
     border-bottom: 1px solid ${Colors.lightgrey}; 
     display: flex;
     align-items: center;
     flex-direction:column;
-    align-content: space-around
-    
-
+    align-content: space-around;
 `
 const LowerProfile = styled.div`
     padding:10px;
@@ -92,6 +90,9 @@ const BorderedIcon = styled.div`
 const ProfileElements = styled.div`
     padding:5px;
 `
+const CustomLink = styled.link`
+  text-decoration:none;
+`
 
 export const LeftMenu: FC = () =>{
     
@@ -144,39 +145,45 @@ export const LeftMenu: FC = () =>{
                 </LowerProfile>
             </ProfileInfo>
             <OtherInfo>
-                <OtherOptions>
-                        <OtherIcons>
-                            <img src="./icons/publications.png" alt="Publications"/> 
-                        </OtherIcons>
-                        <UserOptionsComponents>
-                            <LeftText>
-                                Publications
-                            </LeftText>
-                        </UserOptionsComponents>
-                    
-                </OtherOptions>
-                <OtherOptions>
-                        <OtherIcons>
-                            <img src="./icons/ecosystem.png" alt="Ecosystem"/>
-                        </OtherIcons>
-                        <UserOptionsComponents>
-                            <LeftText>
-                               Ecosystem
-                            </LeftText>
-                        </UserOptionsComponents>
-                    
-                </OtherOptions>
-                <OtherOptions>
-                        <OtherIcons>
-                            <img src="./icons/entities.png" alt="Entities"/> 
-                        </OtherIcons>
-                        <UserOptionsComponents>
-                            <LeftText>
-                                Entities
-                            </LeftText>
-                        </UserOptionsComponents>
-                    
-                </OtherOptions>
+               <Link to = "/publications">
+                    <OtherOptions>
+                            <OtherIcons>
+                                <img src="./icons/publications.png" alt="Publications"/> 
+                            </OtherIcons>
+                            <UserOptionsComponents>
+                                <LeftText>
+                                    Publications
+                                </LeftText>
+                            </UserOptionsComponents>
+                        
+                    </OtherOptions>
+               </Link>
+               <Link to="/ecosystem">
+                    <OtherOptions>
+                            <OtherIcons>
+                                <img src="./icons/ecosystem.png" alt="Ecosystem"/>
+                            </OtherIcons>
+                            <UserOptionsComponents>
+                                <LeftText>
+                                Ecosystem
+                                </LeftText>
+                            </UserOptionsComponents>
+                        
+                    </OtherOptions>
+               </Link>
+                <Link to="/entities">
+                    <OtherOptions>
+                            <OtherIcons>
+                                <img src="./icons/entities.png" alt="Entities"/> 
+                            </OtherIcons>
+                            <UserOptionsComponents>
+                                <LeftText>
+                                    Entities
+                                </LeftText>
+                            </UserOptionsComponents>
+                        
+                    </OtherOptions>
+                </Link>
                 
             </OtherInfo>
         </LeftWrapper>

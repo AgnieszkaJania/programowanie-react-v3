@@ -19,6 +19,9 @@ const ExMenuWrapper = styled.div`
 const CategoryWrapper = styled.div`
 
 `
+const CustomText = styled.p`
+    text-decoration:none;
+`
 const ScrollCategory = styled.div`
     overflow:auto;
     border-bottom: 1px solid grey;
@@ -35,10 +38,9 @@ export const MenuItem = styled.div`
 const CategoryLabel = styled.div`
     color:${Colors.grey};
 `
-// function chosenArea(e){
-//     console.log('done');
-
-// }
+const CustomLink = styled.link`
+    text-decoration:none;
+`
 const FilterInput = styled.input`
     border: 1px solid ${Colors.lightgrey};
     border-radius:5px;
@@ -69,11 +71,11 @@ export const ExpandedMenu: FC =()=>{
                                 <img src="./icons/house2.svg" alt="House"/>
                             </OtherIcons>
                             <Cateories>
-                                    Home    
+                                    <CustomText>Home</CustomText>    
                             </Cateories>  
                         </MenuItem>
                     </Link>
-                    <Link to="/Publications">
+                    <Link to="/publications">
                         <MenuItem>
                             <OtherIcons>
                                 <img src="./icons/publications.png" alt="YourPublications"/> 
@@ -83,7 +85,7 @@ export const ExpandedMenu: FC =()=>{
                             </Cateories>
                         </MenuItem>
                     </Link>
-                    <Link to ="/People">
+                    <Link to ="/people">
                         <MenuItem>
                             <OtherIcons>
                                 <img src="./icons/people.png" alt="People"/>
@@ -94,7 +96,7 @@ export const ExpandedMenu: FC =()=>{
                         </MenuItem>
                     </Link>
                     
-                    <Link to="/Entities">
+                    <Link to="/entities">
                         <MenuItem>
                             <OtherIcons>
                                 <img src="./icons/entities.png" alt="Entities"/> 
@@ -104,7 +106,7 @@ export const ExpandedMenu: FC =()=>{
                             </Cateories>
                         </MenuItem>
                     </Link>
-                    <Link to="/Administration">
+                    <Link to="/administration">
                         <MenuItem>
                             <OtherIcons>
                                 <img src="./icons/administration.png" alt="Administration"/> 
@@ -118,22 +120,26 @@ export const ExpandedMenu: FC =()=>{
 
                 <CategoryWrapper>
                     <CategoryLabel><p>Workspaces</p></CategoryLabel>
-                    <MenuItem>                                          
-                        <OtherIcons>
-                            <img src="./icons/administration.png" alt="Administration"/> 
-                        </OtherIcons>
-                        <Cateories>
-                            Client contract
-                        </Cateories>
-                    </MenuItem>
-                    <MenuItem>                       
-                        <OtherIcons>
-                            <img src="./icons/administration.png" alt="Administration"/> 
-                        </OtherIcons>
-                        <Cateories>
-                            Supplier contract
-                        </Cateories>
-                    </MenuItem>
+                    <Link to="/clientContract">
+                        <MenuItem>                                          
+                            <OtherIcons>
+                                <img src="./icons/administration.png" alt="Administration"/> 
+                            </OtherIcons>
+                            <Cateories>
+                                Client contract
+                            </Cateories>
+                        </MenuItem>
+                    </Link>
+                    <Link to="/supplierContract">
+                        <MenuItem>                       
+                            <OtherIcons>
+                                <img src="./icons/administration.png" alt="Administration"/> 
+                            </OtherIcons>
+                            <Cateories>
+                                Supplier contract
+                            </Cateories>
+                        </MenuItem>
+                    </Link>
                     <MenuItem>                       
                         <OtherIcons>
                             <img src="./icons/entities.png" alt="Entities"/> 

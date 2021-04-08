@@ -22,15 +22,15 @@ const Content = styled.div`
 
 
 
-export const Publications: FC = () =>{
+export const Ecosystem: FC = () =>{
     
     return(
         <Wrapper>
-            <TopNav chosenItem="Publications" iconName="publications.png"/>
+            <TopNav chosenItem="Ecosystem" iconName="ecosystem.png"/>
             <Content>
                 <LeftMenu/>
                <MainBoardWrapper>
-               Publikacja
+               Ecosystem
                </MainBoardWrapper>
                 
             </Content>

@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import styled from 'styled-components';
 import { Colors } from '../../../styledHelpers/Colors';
 
-const MainBoardWrapper = styled.div`
+export const MainBoardWrapper = styled.div`
     display:flex;
     flex-direction:column;
     margin-left:30px;
@@ -67,7 +67,7 @@ export const Workspace: FC = () =>{
                 <LatestPubTextWrapper>
                     <TitleWrapper>
                          Latest publications
-                         <MyFunc name="Aga" surname="Jania" age={26}/>
+                         <MyFunc name="Aga" surname="J" age={100}/>
                          
                     </TitleWrapper>
                 </LatestPubTextWrapper>

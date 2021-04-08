@@ -22,15 +22,15 @@ const Content = styled.div`
 
 
 
-export const Publications: FC = () =>{
+export const SupplierContract: FC = () =>{
     
     return(
         <Wrapper>
-            <TopNav chosenItem="Publications" iconName="publications.png"/>
+            <TopNav chosenItem="Supplier contract" iconName="administration.png"/>
             <Content>
                 <LeftMenu/>
                <MainBoardWrapper>
-               Publikacja
+               Supplier contract
                </MainBoardWrapper>
                 
             </Content>

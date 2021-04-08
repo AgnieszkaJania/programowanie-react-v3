@@ -58,13 +58,16 @@ const LefIcons = styled.div`
 export const Cateories = styled.div`
   margin-left: 5px;
   text-decoration:none;
+  //color:red;
   
 `;
+
 const WrapRefWrapper = styled.div`
   width: 60%;
   background-color:grey;
   position: relative;
 `;
+
 
 const ChosenItem = styled.div`
   width: 100%;

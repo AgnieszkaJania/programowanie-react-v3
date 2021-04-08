@@ -6,6 +6,9 @@ import { Publications } from './components/Publications/Publications';
 import { People } from './components/People/People';
 import { Entities } from './components/Entities/Entities';
 import { Administration } from './components/Administration/Administration';
+import { clientContract } from './components/ClientContract/clientContract';
+import { Ecosystem } from './components/Ecosystem/Ecosystem';
+import { SupplierContract } from './components/SupplierContact/SupplierContract';
 
 function App() {
   return (
@@ -17,6 +20,10 @@ function App() {
           <Route path="/People" component={People}/>
           <Route path="/Entities" component={Entities}/>
           <Route path="/Administration" component={Administration}/>
+          <Route path="/clientContract" component={clientContract}/>
+          <Route path="/Ecosystem" component={Ecosystem}/>
+          <Route path="/Entities" component={Entities}/>
+          <Route path="/SupplierContract" component={SupplierContract}/>
 
         </Switch>
     </Router>

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Colors } from '../../styledHelpers/Colors';
 import { TopNav } from '../TopNav/top_nav';
 import { LeftMenu } from '../LeftMenu/left_menu';
-import { MainBoardWrapper } from '../HomePage/Workspace/workspace';
+
 
 const Wrapper = styled.div`
     background-color: ${Colors.white};
@@ -22,16 +22,14 @@ const Content = styled.div`
 
 
 
-export const Publications: FC = () =>{
+export const clientContract: FC = () =>{
     
     return(
         <Wrapper>
-            <TopNav chosenItem="Publications" iconName="publications.png"/>
+            <TopNav chosenItem="Client contract" iconName="administration.png"/>
             <Content>
                 <LeftMenu/>
-               <MainBoardWrapper>
-               Publikacja
-               </MainBoardWrapper>
+                Client contract
                 
             </Content>
         </Wrapper>
