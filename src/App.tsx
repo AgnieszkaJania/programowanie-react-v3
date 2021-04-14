@@ -9,6 +9,9 @@ import { Administration } from './components/Administration/Administration';
 import { clientContract } from './components/ClientContract/clientContract';
 import { Ecosystem } from './components/Ecosystem/Ecosystem';
 import { SupplierContract } from './components/SupplierContact/SupplierContract';
+import { Corporate } from './components/Corporate/Corporate';
+import { GroupNorms } from './components/groupNorms/groupNorms';
+import { RealEstateContracts } from './components/RealEstateContracts/RealEstateContracts';
 
 function App() {
   return (
@@ -24,6 +27,9 @@ function App() {
           <Route path="/Ecosystem" component={Ecosystem}/>
           <Route path="/Entities" component={Entities}/>
           <Route path="/SupplierContract" component={SupplierContract}/>
+          <Route path="/Corporate" component={Corporate}/>
+          <Route path="/GroupNorms" component={GroupNorms}/>
+          <Route path="/RealEstateContracts" component={RealEstateContracts}/>
 
         </Switch>
     </Router>

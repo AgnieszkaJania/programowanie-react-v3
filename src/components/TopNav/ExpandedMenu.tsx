@@ -38,9 +38,7 @@ export const MenuItem = styled.div`
 const CategoryLabel = styled.div`
     color:${Colors.grey};
 `
-const CustomLink = styled.link`
-    text-decoration:none;
-`
+
 const FilterInput = styled.input`
     border: 1px solid ${Colors.lightgrey};
     border-radius:5px;
@@ -140,30 +138,36 @@ export const ExpandedMenu: FC =()=>{
                             </Cateories>
                         </MenuItem>
                     </Link>
-                    <MenuItem>                       
-                        <OtherIcons>
-                            <img src="./icons/entities.png" alt="Entities"/> 
-                        </OtherIcons>
-                        <Cateories>
-                            Corporate
-                        </Cateories>
-                    </MenuItem>
-                    <MenuItem>                      
-                        <OtherIcons>
-                            <img src="./icons/administration.png" alt="Administration"/> 
-                        </OtherIcons>
-                        <Cateories>
-                            Group norms 
-                        </Cateories>
-                    </MenuItem>
-                    <MenuItem>                       
-                        <OtherIcons>
-                            <img src="./icons/administration.png" alt="Administration"/> 
-                        </OtherIcons>
-                        <Cateories>
-                            Real estate contracts
-                        </Cateories>
-                    </MenuItem>
+                    <Link to="/corporate">
+                        <MenuItem>                       
+                            <OtherIcons>
+                                <img src="./icons/entities.png" alt="Entities"/> 
+                            </OtherIcons>
+                            <Cateories>
+                                Corporate
+                            </Cateories>
+                        </MenuItem>
+                    </Link>
+                    <Link to="/groupNorms">
+                        <MenuItem>                      
+                            <OtherIcons>
+                                <img src="./icons/administration.png" alt="Administration"/> 
+                            </OtherIcons>
+                            <Cateories>
+                                Group norms 
+                            </Cateories>
+                        </MenuItem>
+                    </Link>
+                    <Link to="/realEstateContracts">
+                        <MenuItem>                       
+                            <OtherIcons>
+                                <img src="./icons/administration.png" alt="Administration"/> 
+                            </OtherIcons>
+                            <Cateories>
+                                Real estate contracts
+                            </Cateories>
+                        </MenuItem>
+                    </Link>
                 </CategoryWrapper> 
             </ScrollCategory>  
          
