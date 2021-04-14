@@ -8,16 +8,13 @@ export const MainBoardWrapper = styled.div`
     margin-left:30px;
     background-color:yellow;
     width:70%;
+    color:${Colors.lightblack};
 `
-const LatestPublicationWrapper = styled.div`
+const LatestPublications = styled.div`
     width:100%;
     background-color:${Colors.white};
-    //z-index:1;
     box-shadow: 0px 0px 2px 2px ${Colors.shadowColor};
     display:flex;
-    
-    
-    
 `
 const LatestPubTextWrapper = styled.div`
     text-align:left;
@@ -25,8 +22,6 @@ const LatestPubTextWrapper = styled.div`
     //background-color:yellow;
     margin-left:10px;
     font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    color:${Colors.lightblack};
     width:100%;
     
 `
@@ -39,7 +34,21 @@ const ImageText = styled.div`
     
 `
 const TitleWrapper = styled.div`
-    
+    font-weight: bold;
+`
+const ArticlesContainer = styled.div`
+    display:flex;
+    flex-direction:column;
+`
+const Workspaces = styled.div`
+    background-color:red;
+    display:flex;
+    width:100%;
+
+`
+const ResumeYourWork = styled.div`
+    display:flex;
+    flex-direction:column;
 `
 interface ITextContentProps{
     name: string;
@@ -62,17 +71,31 @@ export const Workspace: FC = () =>{
     
     return(
         <MainBoardWrapper>
-            <LatestPublicationWrapper>
+            <LatestPublications>
                 <ImageText/> 
                 <LatestPubTextWrapper>
                     <TitleWrapper>
-                         Latest publications
-                         <MyFunc name="Aga" surname="J" age={100}/>
-                         
+                        Latest publications
+                   
                     </TitleWrapper>
+                    <ArticlesContainer>
+                        List of articles
+                    </ArticlesContainer>
+
+
                 </LatestPubTextWrapper>
 
-            </LatestPublicationWrapper>
+            </LatestPublications>
+            <Workspaces>
+                <TitleWrapper>
+                    Workspaces
+                </TitleWrapper>
+            </Workspaces>
+            <ResumeYourWork>
+                <TitleWrapper>
+                    Resume your work
+                </TitleWrapper>
+            </ResumeYourWork>
         </MainBoardWrapper>
     );
     

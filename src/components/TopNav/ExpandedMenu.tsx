@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Colors } from '../../styledHelpers/Colors';
 import { Cateories } from '../TopNav/top_nav'; 
 import { OtherIcons } from '../LeftMenu/left_menu';
-import { Link } from 'react-router-dom';
+import { BetterLink } from '../../styledHelpers/betterLinks';
 
 const ExMenuWrapper = styled.div`
     display:flex;
@@ -62,7 +62,7 @@ export const ExpandedMenu: FC =()=>{
                 <CategoryWrapper>
                 
                     <CategoryLabel><p>Platform</p></CategoryLabel>
-                    <Link to="/">
+                    <BetterLink to="/">
                         
                         <MenuItem>
                             <OtherIcons>
@@ -72,8 +72,8 @@ export const ExpandedMenu: FC =()=>{
                                     <CustomText>Home</CustomText>    
                             </Cateories>  
                         </MenuItem>
-                    </Link>
-                    <Link to="/publications">
+                    </BetterLink>
+                    <BetterLink to="/publications">
                         <MenuItem>
                             <OtherIcons>
                                 <img src="./icons/publications.png" alt="YourPublications"/> 
@@ -82,8 +82,8 @@ export const ExpandedMenu: FC =()=>{
                                 Publications
                             </Cateories>
                         </MenuItem>
-                    </Link>
-                    <Link to ="/people">
+                    </BetterLink>
+                    <BetterLink to ="/people">
                         <MenuItem>
                             <OtherIcons>
                                 <img src="./icons/people.png" alt="People"/>
@@ -92,9 +92,9 @@ export const ExpandedMenu: FC =()=>{
                                 People
                             </Cateories>
                         </MenuItem>
-                    </Link>
+                    </BetterLink>
                     
-                    <Link to="/entities">
+                    <BetterLink to="/entities">
                         <MenuItem>
                             <OtherIcons>
                                 <img src="./icons/entities.png" alt="Entities"/> 
@@ -103,8 +103,8 @@ export const ExpandedMenu: FC =()=>{
                                 Entities
                             </Cateories>
                         </MenuItem>
-                    </Link>
-                    <Link to="/administration">
+                    </BetterLink>
+                    <BetterLink to="/administration">
                         <MenuItem>
                             <OtherIcons>
                                 <img src="./icons/administration.png" alt="Administration"/> 
@@ -113,12 +113,12 @@ export const ExpandedMenu: FC =()=>{
                                 Administration
                             </Cateories>
                         </MenuItem>
-                    </Link>
+                    </BetterLink>
                 </CategoryWrapper>
 
                 <CategoryWrapper>
                     <CategoryLabel><p>Workspaces</p></CategoryLabel>
-                    <Link to="/clientContract">
+                    <BetterLink to="/clientContract">
                         <MenuItem>                                          
                             <OtherIcons>
                                 <img src="./icons/administration.png" alt="Administration"/> 
@@ -127,8 +127,8 @@ export const ExpandedMenu: FC =()=>{
                                 Client contract
                             </Cateories>
                         </MenuItem>
-                    </Link>
-                    <Link to="/supplierContract">
+                    </BetterLink>
+                    <BetterLink to="/supplierContract">
                         <MenuItem>                       
                             <OtherIcons>
                                 <img src="./icons/administration.png" alt="Administration"/> 
@@ -137,8 +137,8 @@ export const ExpandedMenu: FC =()=>{
                                 Supplier contract
                             </Cateories>
                         </MenuItem>
-                    </Link>
-                    <Link to="/corporate">
+                    </BetterLink>
+                    <BetterLink to="/corporate">
                         <MenuItem>                       
                             <OtherIcons>
                                 <img src="./icons/entities.png" alt="Entities"/> 
@@ -147,8 +147,8 @@ export const ExpandedMenu: FC =()=>{
                                 Corporate
                             </Cateories>
                         </MenuItem>
-                    </Link>
-                    <Link to="/groupNorms">
+                    </BetterLink>
+                    <BetterLink to="/groupNorms">
                         <MenuItem>                      
                             <OtherIcons>
                                 <img src="./icons/administration.png" alt="Administration"/> 
@@ -157,8 +157,8 @@ export const ExpandedMenu: FC =()=>{
                                 Group norms 
                             </Cateories>
                         </MenuItem>
-                    </Link>
-                    <Link to="/realEstateContracts">
+                    </BetterLink>
+                    <BetterLink to="/realEstateContracts">
                         <MenuItem>                       
                             <OtherIcons>
                                 <img src="./icons/administration.png" alt="Administration"/> 
@@ -167,7 +167,7 @@ export const ExpandedMenu: FC =()=>{
                                 Real estate contracts
                             </Cateories>
                         </MenuItem>
-                    </Link>
+                    </BetterLink>
                 </CategoryWrapper> 
             </ScrollCategory>  
          

@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import styled from 'styled-components';
 import { fontSize } from '../../styledHelpers/FontSizes';
 import { Colors } from '../../styledHelpers/Colors';
-import { Link } from 'react-router-dom';
+import { BetterLink } from '../../styledHelpers/betterLinks';
 
 
 const LeftWrapper = styled.div`
@@ -90,9 +90,7 @@ const BorderedIcon = styled.div`
 const ProfileElements = styled.div`
     padding:5px;
 `
-const CustomLink = styled.link`
-  text-decoration:none;
-`
+
 
 export const LeftMenu: FC = () =>{
     
@@ -145,7 +143,7 @@ export const LeftMenu: FC = () =>{
                 </LowerProfile>
             </ProfileInfo>
             <OtherInfo>
-               <Link to = "/publications">
+               <BetterLink to = "/publications">
                     <OtherOptions>
                             <OtherIcons>
                                 <img src="./icons/publications.png" alt="Publications"/> 
@@ -157,8 +155,8 @@ export const LeftMenu: FC = () =>{
                             </UserOptionsComponents>
                         
                     </OtherOptions>
-               </Link>
-               <Link to="/ecosystem">
+               </BetterLink>
+               <BetterLink to="/ecosystem">
                     <OtherOptions>
                             <OtherIcons>
                                 <img src="./icons/ecosystem.png" alt="Ecosystem"/>
@@ -170,8 +168,8 @@ export const LeftMenu: FC = () =>{
                             </UserOptionsComponents>
                         
                     </OtherOptions>
-               </Link>
-                <Link to="/entities">
+               </BetterLink>
+                <BetterLink to="/entities">
                     <OtherOptions>
                             <OtherIcons>
                                 <img src="./icons/entities.png" alt="Entities"/> 
@@ -183,7 +181,7 @@ export const LeftMenu: FC = () =>{
                             </UserOptionsComponents>
                         
                     </OtherOptions>
-                </Link>
+                </BetterLink>
                 
             </OtherInfo>
         </LeftWrapper>
