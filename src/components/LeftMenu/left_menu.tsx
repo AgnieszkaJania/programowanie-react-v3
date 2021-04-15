@@ -3,6 +3,10 @@ import styled from 'styled-components';
 import { fontSize } from '../../styledHelpers/FontSizes';
 import { Colors } from '../../styledHelpers/Colors';
 import { BetterLink } from '../../styledHelpers/betterLinks';
+import { useSelector } from 'react-redux';
+import { IState } from '../../reducers';
+import { IUsersReducer } from '../../reducers/usersReducers';
+import { IFotoReducer } from '../../reducers/fotoReducers';
 
 
 const LeftWrapper = styled.div`
@@ -94,54 +98,64 @@ const ProfileElements = styled.div`
 
 export const LeftMenu: FC = () =>{
     
+    const { usersList, fotoList, currentUser } = useSelector<IState, IUsersReducer & IFotoReducer>(globalState => ({
+        ...globalState.users,
+        ...globalState.foto
+    }));
+
     return(
        
         <LeftWrapper>
-            <ProfileInfo>
-                <UpperProfile>
-                    <ProfileElements>
-                        <img src="./icons/ClipartKey_3011907.png" alt="Logo" width="40"/>
-                    </ProfileElements>
-                    <ProfileElements>
-                       <UserName>
-                           Humberta Swift
-                       </UserName>
-                    </ProfileElements>
-                    <ProfileElements>
-                        <UserDesc>
-                           Job title - Company
-                        </UserDesc>
-                    </ProfileElements>
-                </UpperProfile>
-                <LowerProfile>
-                    <UserOptions>
-                        <div>
-                            <img src="./icons/network.png" alt="Network"/> 
-                        </div>
-                        <UserOptionsComponents>
-                            <LeftText>
-                                Your network
-                            </LeftText>
-                        </UserOptionsComponents>
-                        <BorderedIcon>
-                            <img src="./icons/user-plus.png" alt="UserPlus"/>
-                        </BorderedIcon>
-                    </UserOptions>
-                    <UserOptions>
-                        <div>
-                            <img src="./icons/publications.png" alt="YourPublications"/> 
-                        </div>
-                        <UserOptionsComponents>
-                            <LeftText>
-                                Your Publications
-                            </LeftText>
-                        </UserOptionsComponents>
-                        <BorderedIcon>
-                            <img src="./icons/plus.png" alt="UserPlus"/>
-                        </BorderedIcon>
-                    </UserOptions>
-                </LowerProfile>
-            </ProfileInfo>
+            {console.log(usersList)}
+            {console.log(fotoList)}
+            {usersList.length > 0 && fotoList.length > 0 && 
+                <ProfileInfo>
+                    <UpperProfile>
+                        <ProfileElements>
+                            <img src={fotoList[currentUser.id].url} alt="Logo" width="40"/>
+                        </ProfileElements>
+                        <ProfileElements>
+                        <UserName>
+                            {usersList[0].name}
+                        </UserName>
+                        </ProfileElements>
+                        <ProfileElements>
+                            <UserDesc>
+                            Job title - {usersList[0].company.name}
+                            </UserDesc>
+                        </ProfileElements>
+                    </UpperProfile>
+                    <LowerProfile>
+                        <UserOptions>
+                            <div>
+                                <img src="./icons/network.png" alt="Network"/> 
+                            </div>
+                            <UserOptionsComponents>
+                                <LeftText>
+                                    Your network
+                                </LeftText>
+                            </UserOptionsComponents>
+                            <BorderedIcon>
+                                <img src="./icons/user-plus.png" alt="UserPlus"/>
+                            </BorderedIcon>
+                        </UserOptions>
+                        <UserOptions>
+                            <div>
+                                <img src="./icons/publications.png" alt="YourPublications"/> 
+                            </div>
+                            <UserOptionsComponents>
+                                <LeftText>
+                                    Your Publications
+                                </LeftText>
+                            </UserOptionsComponents>
+                            <BorderedIcon>
+                                <img src="./icons/plus.png" alt="UserPlus"/>
+                            </BorderedIcon>
+                        </UserOptions>
+                    </LowerProfile>
+                </ProfileInfo>
+            }
+            
             <OtherInfo>
                <BetterLink to = "/publications">
                     <OtherOptions>
@@ -184,6 +198,7 @@ export const LeftMenu: FC = () =>{
                 </BetterLink>
                 
             </OtherInfo>
+           
         </LeftWrapper>
         
     );

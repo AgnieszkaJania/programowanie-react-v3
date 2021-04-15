@@ -9,6 +9,7 @@ export const MainBoardWrapper = styled.div`
     background-color:yellow;
     width:70%;
     color:${Colors.lightblack};
+    font-family: Arial, Helvetica, sans-serif;
 `
 const LatestPublications = styled.div`
     width:100%;
@@ -21,7 +22,6 @@ const LatestPubTextWrapper = styled.div`
     padding:5px;
     //background-color:yellow;
     margin-left:10px;
-    font-family: Arial, Helvetica, sans-serif;
     width:100%;
     
 `
