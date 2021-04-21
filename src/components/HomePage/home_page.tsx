@@ -7,6 +7,7 @@ import { Workspace } from './Workspace/workspace';
 import {useDispatch} from 'react-redux';
 import { getUsers } from '../../actions/usersActions';
 import { getFotos } from '../../actions/fotoActions';
+import { getPosts  } from '../../actions/postActions';
 
 const Wrapper = styled.div`
     background-color: ${Colors.white};
@@ -25,13 +26,14 @@ const Content = styled.div`
 
 type GetUsers = ReturnType<typeof getUsers>
 type GetFotos = ReturnType<typeof getFotos>
-
+type GetPosts = ReturnType<typeof getPosts>
 export const HomePage: FC = () =>{
 
     const dispatch = useDispatch();
     useEffect(()=>{
         dispatch<GetUsers>(getUsers());
         dispatch<GetFotos>(getFotos());
+        dispatch<GetPosts>(getPosts());
 
     }, []);
     

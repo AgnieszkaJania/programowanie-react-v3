@@ -13,7 +13,7 @@ const LeftWrapper = styled.div`
     float:left;
     width: 20%;
     background-color:${Colors.white};
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Courier New', Courier, monospace;
     height:100%;
     
 
@@ -94,7 +94,11 @@ const BorderedIcon = styled.div`
 const ProfileElements = styled.div`
     padding:5px;
 `
-
+export const UserPhoto = styled.img`
+    width:45px;
+    border-radius:50px;
+    height:45px;
+`
 
 export const LeftMenu: FC = () =>{
     
@@ -112,7 +116,7 @@ export const LeftMenu: FC = () =>{
                 <ProfileInfo>
                     <UpperProfile>
                         <ProfileElements>
-                            <img src={fotoList[currentUser.id].url} alt="Logo" width="40"/>
+                            <UserPhoto src={fotoList[currentUser.id].url} alt="Logo" />
                         </ProfileElements>
                         <ProfileElements>
                         <UserName>

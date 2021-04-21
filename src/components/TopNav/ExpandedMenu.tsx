@@ -4,6 +4,11 @@ import { Colors } from '../../styledHelpers/Colors';
 import { Cateories } from '../TopNav/top_nav'; 
 import { OtherIcons } from '../LeftMenu/left_menu';
 import { BetterLink } from '../../styledHelpers/betterLinks';
+import { useSelector } from 'react-redux';
+import { IState } from '../../reducers';
+import { IUsersReducer } from '../../reducers/usersReducers';
+import { IFotoReducer } from '../../reducers/fotoReducers';
+import{BasicLink} from '../../styledHelpers/betterLinks'
 
 const ExMenuWrapper = styled.div`
     display:flex;
@@ -51,8 +56,19 @@ const LogoutWrapper = styled.div`
     padding:5px;
     border-top: 1px solid grey;
 `
+const MenuPhoto = styled.img`
+    width:20%;
+    height:20%;
+    border-radius:50px;
+`
+
 
 export const ExpandedMenu: FC =()=>{
+
+    const { usersList, fotoList, currentUser } = useSelector<IState, IUsersReducer & IFotoReducer>(globalState => ({
+        ...globalState.users,
+        ...globalState.foto
+    }));
 
     return(
         <ExMenuWrapper>
@@ -170,28 +186,37 @@ export const ExpandedMenu: FC =()=>{
                     </BetterLink>
                 </CategoryWrapper> 
             </ScrollCategory>  
-         
-            <CategoryWrapper>
-                
-                <CategoryLabel>Account</CategoryLabel>
-                <MenuItem>
-                    <OtherIcons>
-                        <img src="./icons/settings.png" alt="Settings"/>  
-                    </OtherIcons>
-                    <Cateories>
-                        Settings     
-                    </Cateories>
-                </MenuItem>
-                <MenuItem>
-                    <OtherIcons>
-                        <img src="./icons/privacy.png" alt="Privacy"/>   
-                    </OtherIcons>
-                    <Cateories>
-                        Privacy     
-                    </Cateories>
-                </MenuItem>
+            {usersList.length > 0 && fotoList.length > 0 && 
+                <CategoryWrapper>
+                    
+                    <CategoryLabel>Account</CategoryLabel>
+                    <MenuItem>
+                        <OtherIcons>
+                            <img src="./icons/settings.png" alt="Settings"/>  
+                        </OtherIcons>
+                        <Cateories>
+                            Settings     
+                        </Cateories>
+                    </MenuItem>
+                    <MenuItem>
+                        <OtherIcons>
+                            <img src="./icons/privacy.png" alt="Privacy"/>   
+                        </OtherIcons>
+                        <Cateories>
+                            Privacy     
+                        </Cateories>
+                    </MenuItem>
+                    <MenuItem>
+                        <MenuPhoto src={fotoList[currentUser.id].url} alt="Logo"/> 
+                        <Cateories>
+                            {usersList[0].name}
+                            <div>See profile</div>
+                        </Cateories>
+                        
+                    </MenuItem>
 
-            </CategoryWrapper>
+                </CategoryWrapper>
+            }
             <CategoryWrapper>
                 <LogoutWrapper>
                     <div>
