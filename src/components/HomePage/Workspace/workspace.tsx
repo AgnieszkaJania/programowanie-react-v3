@@ -6,13 +6,16 @@ import { Colors } from '../../../styledHelpers/Colors';
 import { IState } from '../../../reducers';
 import { IUsersReducer } from '../../../reducers/usersReducers';
 import { IFotoReducer } from '../../../reducers/fotoReducers';
+import { SliderContainer } from './slider_container';
+import { ResumeYourWorkContainer } from './resumeYourWorkContainer';
+
 
 
 export const MainBoardWrapper = styled.div`
     display:flex;
     flex-direction:column;
     margin-left:30px;
-    //background-color:yellow;
+    /* background-color:yellow; */
     width:70%;
     color:${Colors.lightblack};
     font-family: 'Courier New', Courier, monospace;
@@ -50,6 +53,7 @@ const ImageText = styled.div`
 const TitleWrapper = styled.div`
     font-weight: bold;
     font-size:120%;
+    //margin-left:10px;
 `
 const ArticlesContainer = styled.div`
     display:flex;
@@ -58,11 +62,11 @@ const ArticlesContainer = styled.div`
     //background-color:red;
 `
 const Workspaces = styled.div`
-   background-color:red;
+   /* background-color:red; */
     display:flex;
+    flex-direction:column;
     width:100%;
     margin-top:20px;
-    margin-left:20px;
 
 `
 const ResumeYourWork = styled.div`
@@ -120,6 +124,9 @@ const ImageTexInnerDiv = styled.div`
     padding-left:10px;
     padding-bottom:20px;
 `
+const SectionTitleWrapper = styled(TitleWrapper)`
+    margin-left:20px;
+`
 
 export const Workspace: FC = () =>{
     
@@ -136,8 +143,8 @@ export const Workspace: FC = () =>{
                 <LatestPublications>
                     <ImageText>
                            <ImageTexInnerDiv>
-                            <TitlePublicationContainer>
-                                    {currentPost.title}
+                                <TitlePublicationContainer>
+                                        {currentPost.title}
                                 </TitlePublicationContainer>
                                 <UserInfoContainer>
                                     <DateUserContainer>
@@ -148,7 +155,7 @@ export const Workspace: FC = () =>{
                                         {usersList[currentPost.userId - 1].name}
                                     </MainNameUserContainer>
 
-                                            
+                                                
                                 </UserInfoContainer>
                            </ImageTexInnerDiv>
                     </ImageText> 
@@ -226,14 +233,16 @@ export const Workspace: FC = () =>{
                 </LatestPublications>
             }
             <Workspaces>
-                <TitleWrapper>
+                <SectionTitleWrapper>
                     Workspaces
-                </TitleWrapper>
+                </SectionTitleWrapper>
+                <SliderContainer/>
             </Workspaces>
             <ResumeYourWork>
-                <TitleWrapper>
+                <SectionTitleWrapper>
                     Resume your work
-                </TitleWrapper>
+                </SectionTitleWrapper>
+                <ResumeYourWorkContainer/>
             </ResumeYourWork>
         </MainBoardWrapper>
     );

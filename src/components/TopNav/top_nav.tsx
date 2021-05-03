@@ -82,6 +82,19 @@ const ChosenItem = styled.div`
 const TopNavImage = styled.div`
   width:35px;
 `
+const BackgroundImageDiv = styled.div`
+  position:relative;
+`
+const Notifications = styled.div`
+  background-color:blue;
+  color:${Colors.white};
+  font-size:1.5ch;
+  border-radius:10px;
+  position:absolute;
+  top:0px;
+  right:0px;
+  padding:0px 5px;
+`
 interface ITopNav {
   chosenItem: string;
   iconName?: string;
@@ -126,12 +139,18 @@ export const TopNav: FC<ITopNav> = (props) => {
           <div>
             <img src="./icons/house.png" alt="House" />
           </div>
-          <RoundImage>
-            <img src="./icons/comments.png" alt="Comments" />
-          </RoundImage>
-          <RoundImage>
-            <img src="./icons/bell.png" alt="Bell" />
-          </RoundImage>
+          <BackgroundImageDiv>
+          <Notifications>3</Notifications>
+            <RoundImage>
+              <img src="./icons/comments.png" alt="Comments" />
+            </RoundImage>
+          </BackgroundImageDiv>
+          <BackgroundImageDiv>
+            <Notifications>3</Notifications>
+            <RoundImage>
+              <img src="./icons/bell.png" alt="Bell" />
+            </RoundImage>
+          </BackgroundImageDiv>
         </RightIcons>
       </InnerWrapper>
     </Wrapper>
