@@ -4,7 +4,8 @@ import { useSelector } from 'react-redux';
 import { IPostReducer } from '../../../reducers/postReducers';
 import { Colors } from '../../../styledHelpers/Colors';
 import { IState } from '../../../reducers';
-
+import { IUsersReducer } from '../../../reducers/usersReducers';
+import { IFotoReducer } from '../../../reducers/fotoReducers';
 
 
 export const MainBoardWrapper = styled.div`
@@ -38,6 +39,12 @@ const ImageText = styled.div`
     background-repeat: no-repeat;
     width:40%;
     height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    color:white;
+    
+    
     
 `
 const TitleWrapper = styled.div`
@@ -51,9 +58,11 @@ const ArticlesContainer = styled.div`
     //background-color:red;
 `
 const Workspaces = styled.div`
-   // background-color:red;
+   background-color:red;
     display:flex;
     width:100%;
+    margin-top:20px;
+    margin-left:20px;
 
 `
 const ResumeYourWork = styled.div`
@@ -70,12 +79,14 @@ const ArticleImage = styled.div`
     min-width: 60px;
     height: 60px;
     background-image: url('./icons/skyscrapers.jpg');
+    
 `
 const TextContainer = styled.div`
     margin-left: 10px;
     display:flex;
     flex-direction:column;
     justify-content:space-around;
+    //background-color:green;
     
 `
 const TitlePublicationContainer = styled.div`
@@ -86,69 +97,134 @@ const DateUserContainer = styled.div`
     display:flex;
     font-size:13px;
 `
+const NameUserContainer = styled.div`
+    display:flex;
+    font-size:13px;
+    color:${Colors.black};
+    margin-left: 5px;
+`
+const MainNameUserContainer = styled(NameUserContainer)`
+    color:${Colors.white};
+`
+const PostUserPhoto = styled.img`
+    width:20px;
+    height:20px;
+    margin-left:10px;
+    border-radius:10px;
+`
+const UserInfoContainer = styled.div`
+    display:flex;
+    align-items:center;
+`
+const ImageTexInnerDiv = styled.div`
+    padding-left:10px;
+    padding-bottom:20px;
+`
 
 export const Workspace: FC = () =>{
     
-    const { postList } = useSelector<IState, IPostReducer>(globalState => ({
-        ...globalState.post
+    const { postList,fotoList, usersList, currentPost } = useSelector<IState, IPostReducer & IUsersReducer & IFotoReducer>(globalState => ({
+        ...globalState.post,
+        ...globalState.users,
+        ...globalState.foto
         
     }));
     return(
         <MainBoardWrapper>
             {console.log(postList)}
-            <LatestPublications>
-                <ImageText/> 
-                <LatestPubTextWrapper>
-                    <TitleWrapper>
-                        Latest publications
-                   
-                    </TitleWrapper>
-                   {postList.length > 0 &&
-
-                        <ArticlesContainer>
-                                                
-                            <Article>
-                                <ArticleImage/>
-                                <TextContainer>
-                                    <TitlePublicationContainer>
-                                        {postList[0].title}
-                                    </TitlePublicationContainer>
+            {postList.length > 0 && fotoList.length > 0 && usersList.length > 0 &&
+                <LatestPublications>
+                    <ImageText>
+                           <ImageTexInnerDiv>
+                            <TitlePublicationContainer>
+                                    {currentPost.title}
+                                </TitlePublicationContainer>
+                                <UserInfoContainer>
                                     <DateUserContainer>
                                         <p>7 jan. 2020</p>
                                     </DateUserContainer>
-                                </TextContainer>
-                            </Article>
-                            <Article>
-                                <ArticleImage/>
-                                <TextContainer>
-                                    <TitlePublicationContainer>
-                                            {postList[0].title}
-                                    </TitlePublicationContainer>
-                                    <DateUserContainer>
-                                        <p>7 jan. 2020</p>
-                                    </DateUserContainer>
-                                </TextContainer>
-                            </Article>
-                            <Article>
-                                <ArticleImage/>
-                                <TextContainer>
-                                    <TitlePublicationContainer>
-                                            {postList[0].title}
-                                    </TitlePublicationContainer>
-                                    <DateUserContainer>
-                                        <p>7 jan. 2020</p>
-                                    </DateUserContainer>
-                                </TextContainer>
-                            </Article>
-                        </ArticlesContainer>
-                        
+                                    <PostUserPhoto src={fotoList[currentPost.userId - 1].url} alt="User logo"/>
+                                    <MainNameUserContainer>
+                                        {usersList[currentPost.userId - 1].name}
+                                    </MainNameUserContainer>
 
-                    }
-                    <div>See more publications</div>
+                                            
+                                </UserInfoContainer>
+                           </ImageTexInnerDiv>
+                    </ImageText> 
+                    <LatestPubTextWrapper>
+                        <TitleWrapper>
+                            Latest publications
+                    
+                        </TitleWrapper>
+                    
 
-                </LatestPubTextWrapper>
+                            <ArticlesContainer>
+                                                    
+                                <Article>
+                                    <ArticleImage/>
+                                    <TextContainer>
+                                        <TitlePublicationContainer>
+                                            {currentPost.title}
+                                        </TitlePublicationContainer>
+                                        <UserInfoContainer>
+                                            <DateUserContainer>
+                                                <p>7 jan. 2020</p>
+                                            </DateUserContainer>
+                                            <PostUserPhoto src={fotoList[currentPost.userId - 1].url} alt="User logo"/>
+                                            <NameUserContainer>
+                                                {usersList[currentPost.userId - 1].name}
+                                            </NameUserContainer>
 
-            </LatestPublications>
+                                        
+                                        </UserInfoContainer>
+                                    </TextContainer>
+                                </Article>
+                                <Article>
+                                    <ArticleImage/>
+                                    <TextContainer>
+                                        <TitlePublicationContainer>
+                                            {currentPost.title}
+                                        </TitlePublicationContainer>
+                                        <UserInfoContainer>
+                                            <DateUserContainer>
+                                                <p>7 jan. 2020</p>
+                                            </DateUserContainer>
+                                            <PostUserPhoto src={fotoList[currentPost.userId - 1].url} alt="User logo"/>
+                                            <NameUserContainer>
+                                                {usersList[currentPost.userId - 1].name}
+                                            </NameUserContainer>
+
+                                        
+                                        </UserInfoContainer>
+                                    </TextContainer>
+                                </Article>
+                                <Article>
+                                    <ArticleImage/>
+                                    <TextContainer>
+                                        <TitlePublicationContainer>
+                                            {currentPost.title}
+                                        </TitlePublicationContainer>
+                                        <UserInfoContainer>
+                                            <DateUserContainer>
+                                                <p>7 jan. 2020</p>
+                                            </DateUserContainer>
+                                            <PostUserPhoto src={fotoList[currentPost.userId - 1].url} alt="User logo"/>
+                                            <NameUserContainer>
+                                                {usersList[currentPost.userId - 1].name}
+                                            </NameUserContainer>
+
+                                        
+                                        </UserInfoContainer>
+                                    </TextContainer>
+                                </Article>
+                            </ArticlesContainer>
+                        <div>See more publications</div>
+
+                    </LatestPubTextWrapper>
+
+                </LatestPublications>
+            }
             <Workspaces>
                 <TitleWrapper>
                     Workspaces

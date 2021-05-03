@@ -3,10 +3,12 @@ import * as actionTypes from '../actions/actionTypes/postTypes';
 
 export interface IPostReducer{
     postList: ISinglePost[];
+    currentPost: ISinglePost;
 }
 
 const defaultState = (): IPostReducer =>({
-    postList: []
+    postList: [],
+    currentPost: undefined
 });
 
 
@@ -17,7 +19,8 @@ export default (state = defaultState(), action:any) =>{
             const paylod: actionTypes.IPostTypes['GET_POSTS'] = action;
             return{
                 ...state,
-                postList: paylod.postList
+                postList: paylod.data.postList,
+                currentPost: paylod.data.currentPost
             }
         }
         default: {

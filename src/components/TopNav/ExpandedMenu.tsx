@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { ChangeEvent, FC, useState } from 'react';
 import styled from 'styled-components';
 import { Colors } from '../../styledHelpers/Colors';
 import { Cateories } from '../TopNav/top_nav'; 
@@ -8,7 +8,7 @@ import { useSelector } from 'react-redux';
 import { IState } from '../../reducers';
 import { IUsersReducer } from '../../reducers/usersReducers';
 import { IFotoReducer } from '../../reducers/fotoReducers';
-import{BasicLink} from '../../styledHelpers/betterLinks'
+
 
 const ExMenuWrapper = styled.div`
     display:flex;
@@ -16,7 +16,7 @@ const ExMenuWrapper = styled.div`
     position:absolute;
     background-color:white;
     border: 1px solid ${Colors.lightgrey};
-    height:80vh;
+    max-height:80vh;
     min-width:100%;
     
     
@@ -36,9 +36,6 @@ export const MenuItem = styled.div`
     display:flex;
     justify-content:flex-start;
     align-items:center;  
-    //background-color:yellow;
-    //width:100%; 
-
 `
 const CategoryLabel = styled.div`
     color:${Colors.grey};
@@ -55,13 +52,16 @@ const LogoutWrapper = styled.div`
     justify-content:center;
     padding:5px;
     border-top: 1px solid grey;
+    background-color:red;
 `
 const MenuPhoto = styled.img`
     width:20%;
     height:20%;
     border-radius:50px;
 `
-
+const LogoutTitle = styled.div`
+    margin-left:5px;
+`
 
 export const ExpandedMenu: FC =()=>{
 
@@ -70,142 +70,173 @@ export const ExpandedMenu: FC =()=>{
         ...globalState.foto
     }));
 
+    const [inputText, setInputText] = useState<string>('');
+
+    const inputHandler = (e: ChangeEvent<HTMLInputElement>) =>{
+        const text = e.target.value;
+        setInputText(text);
+    }
+
     return(
         <ExMenuWrapper>
-                <FilterInput  placeholder="Filter..."></FilterInput>
+                <FilterInput type="text" value={inputText} onChange={inputHandler}  placeholder="Filter..."/>
             <ScrollCategory>
                 
                 <CategoryWrapper>
                 
                     <CategoryLabel><p>Platform</p></CategoryLabel>
-                    <BetterLink to="/">
-                        
-                        <MenuItem>
-                            <OtherIcons>
-                                <img src="./icons/house2.svg" alt="House"/>
-                            </OtherIcons>
-                            <Cateories>
-                                    <CustomText>Home</CustomText>    
-                            </Cateories>  
-                        </MenuItem>
-                    </BetterLink>
-                    <BetterLink to="/publications">
-                        <MenuItem>
-                            <OtherIcons>
-                                <img src="./icons/publications.png" alt="YourPublications"/> 
-                            </OtherIcons>
-                            <Cateories>
-                                Publications
-                            </Cateories>
-                        </MenuItem>
-                    </BetterLink>
-                    <BetterLink to ="/people">
-                        <MenuItem>
-                            <OtherIcons>
-                                <img src="./icons/people.png" alt="People"/>
-                            </OtherIcons>
-                            <Cateories>
-                                People
-                            </Cateories>
-                        </MenuItem>
-                    </BetterLink>
-                    
-                    <BetterLink to="/entities">
-                        <MenuItem>
-                            <OtherIcons>
-                                <img src="./icons/entities.png" alt="Entities"/> 
-                            </OtherIcons>
-                            <Cateories>
-                                Entities
-                            </Cateories>
-                        </MenuItem>
-                    </BetterLink>
-                    <BetterLink to="/administration">
-                        <MenuItem>
-                            <OtherIcons>
-                                <img src="./icons/administration.png" alt="Administration"/> 
-                            </OtherIcons>
-                            <Cateories>
-                                Administration
-                            </Cateories>
-                        </MenuItem>
-                    </BetterLink>
+                    {'Home'.toLowerCase().includes(inputText.toLowerCase()) &&
+                            <BetterLink to="/">
+                                
+                                <MenuItem>
+                                        <OtherIcons>
+                                            <img src="./icons/house2.svg" alt="House"/>
+                                        </OtherIcons>
+                                        <Cateories>
+                                                <CustomText>Home</CustomText>    
+                                        </Cateories>  
+                                </MenuItem>
+                            </BetterLink>        
+                                
+                    }           
+                    {'Publications'.toLowerCase().includes(inputText.toLowerCase()) &&        
+                        <BetterLink to="/publications">
+                            <MenuItem>
+                                <OtherIcons>
+                                    <img src="./icons/publications.png" alt="YourPublications"/> 
+                                </OtherIcons>
+                                <Cateories>
+                                    Publications
+                                </Cateories>
+                            </MenuItem>
+                        </BetterLink>
+                    }
+                    {'People'.toLowerCase().includes(inputText.toLowerCase()) &&
+                        <BetterLink to ="/people">
+                            <MenuItem>
+                                <OtherIcons>
+                                    <img src="./icons/people.png" alt="People"/>
+                                </OtherIcons>
+                                <Cateories>
+                                    People
+                                </Cateories>
+                            </MenuItem>
+                        </BetterLink>
+                    }
+                    {'Entities'.toLowerCase().includes(inputText.toLowerCase()) &&
+                        <BetterLink to="/entities">
+                            <MenuItem>
+                                <OtherIcons>
+                                    <img src="./icons/entities.png" alt="Entities"/> 
+                                </OtherIcons>
+                                <Cateories>
+                                    Entities
+                                </Cateories>
+                            </MenuItem>
+                        </BetterLink>
+                    }
+                    {'Administration'.toLowerCase().includes(inputText.toLowerCase()) &&
+                        <BetterLink to="/administration">
+                            <MenuItem>
+                                <OtherIcons>
+                                    <img src="./icons/administration.png" alt="Administration"/> 
+                                </OtherIcons>
+                                <Cateories>
+                                    Administration
+                                </Cateories>
+                            </MenuItem>
+                        </BetterLink>
+                    }
                 </CategoryWrapper>
 
                 <CategoryWrapper>
                     <CategoryLabel><p>Workspaces</p></CategoryLabel>
-                    <BetterLink to="/clientContract">
-                        <MenuItem>                                          
-                            <OtherIcons>
-                                <img src="./icons/administration.png" alt="Administration"/> 
-                            </OtherIcons>
-                            <Cateories>
-                                Client contract
-                            </Cateories>
-                        </MenuItem>
-                    </BetterLink>
-                    <BetterLink to="/supplierContract">
-                        <MenuItem>                       
-                            <OtherIcons>
-                                <img src="./icons/administration.png" alt="Administration"/> 
-                            </OtherIcons>
-                            <Cateories>
-                                Supplier contract
-                            </Cateories>
-                        </MenuItem>
-                    </BetterLink>
-                    <BetterLink to="/corporate">
-                        <MenuItem>                       
-                            <OtherIcons>
-                                <img src="./icons/entities.png" alt="Entities"/> 
-                            </OtherIcons>
-                            <Cateories>
-                                Corporate
-                            </Cateories>
-                        </MenuItem>
-                    </BetterLink>
-                    <BetterLink to="/groupNorms">
-                        <MenuItem>                      
-                            <OtherIcons>
-                                <img src="./icons/administration.png" alt="Administration"/> 
-                            </OtherIcons>
-                            <Cateories>
-                                Group norms 
-                            </Cateories>
-                        </MenuItem>
-                    </BetterLink>
-                    <BetterLink to="/realEstateContracts">
-                        <MenuItem>                       
-                            <OtherIcons>
-                                <img src="./icons/administration.png" alt="Administration"/> 
-                            </OtherIcons>
-                            <Cateories>
-                                Real estate contracts
-                            </Cateories>
-                        </MenuItem>
-                    </BetterLink>
+                    {'Client contract'.toLowerCase().includes(inputText.toLowerCase()) &&
+                        <BetterLink to="/clientContract">
+                            <MenuItem>                                          
+                                <OtherIcons>
+                                    <img src="./icons/administration.png" alt="Administration"/> 
+                                </OtherIcons>
+                                <Cateories>
+                                    Client contract
+                                </Cateories>
+                            </MenuItem>
+                        </BetterLink>
+                    }
+                    {'Supplier contract'.toLowerCase().includes(inputText.toLowerCase()) &&
+                        <BetterLink to="/supplierContract">
+                            <MenuItem>                       
+                                <OtherIcons>
+                                    <img src="./icons/administration.png" alt="Administration"/> 
+                                </OtherIcons>
+                                <Cateories>
+                                    Supplier contract
+                                </Cateories>
+                            </MenuItem>
+                        </BetterLink>
+                    }
+                    {'Corporate'.toLowerCase().includes(inputText.toLowerCase()) &&
+                        <BetterLink to="/corporate">
+                            <MenuItem>                       
+                                <OtherIcons>
+                                    <img src="./icons/entities.png" alt="Entities"/> 
+                                </OtherIcons>
+                                <Cateories>
+                                    Corporate
+                                </Cateories>
+                            </MenuItem>
+                        </BetterLink>
+                    }
+                    {'Group norms'.toLowerCase().includes(inputText.toLowerCase()) &&
+                        <BetterLink to="/groupNorms">
+                            <MenuItem>                      
+                                <OtherIcons>
+                                    <img src="./icons/administration.png" alt="Administration"/> 
+                                </OtherIcons>
+                                <Cateories>
+                                    Group norms 
+                                </Cateories>
+                            </MenuItem>
+                        </BetterLink>
+                    }
+                    {'Real estate contracts'.toLowerCase().includes(inputText.toLowerCase()) &&
+                        <BetterLink to="/realEstateContracts">
+                            <MenuItem>                       
+                                <OtherIcons>
+                                    <img src="./icons/administration.png" alt="Administration"/> 
+                                </OtherIcons>
+                                <Cateories>
+                                    Real estate contracts
+                                </Cateories>
+                            </MenuItem>
+                        </BetterLink>
+                    }
                 </CategoryWrapper> 
             </ScrollCategory>  
             {usersList.length > 0 && fotoList.length > 0 && 
                 <CategoryWrapper>
                     
                     <CategoryLabel>Account</CategoryLabel>
-                    <MenuItem>
-                        <OtherIcons>
-                            <img src="./icons/settings.png" alt="Settings"/>  
-                        </OtherIcons>
-                        <Cateories>
-                            Settings     
-                        </Cateories>
-                    </MenuItem>
-                    <MenuItem>
-                        <OtherIcons>
-                            <img src="./icons/privacy.png" alt="Privacy"/>   
-                        </OtherIcons>
-                        <Cateories>
-                            Privacy     
-                        </Cateories>
-                    </MenuItem>
+                    {'Settings'.toLowerCase().includes(inputText.toLowerCase()) &&
+                        <MenuItem>
+                            <OtherIcons>
+                                <img src="./icons/settings.png" alt="Settings"/>  
+                            </OtherIcons>
+                            <Cateories>
+                                Settings     
+                            </Cateories>
+                        </MenuItem>
+                    }
+                    {'Privacy'.toLowerCase().includes(inputText.toLowerCase()) &&
+                        <MenuItem>
+                            <OtherIcons>
+                                <img src="./icons/privacy.png" alt="Privacy"/>   
+                            </OtherIcons>
+                            <Cateories>
+                                Privacy     
+                            </Cateories>
+                        </MenuItem>
+                    }
                     <MenuItem>
                         <MenuPhoto src={fotoList[currentUser.id].url} alt="Logo"/> 
                         <Cateories>
@@ -222,9 +253,9 @@ export const ExpandedMenu: FC =()=>{
                     <div>
                         <img src="./icons/logout.png" alt="logout"/> 
                     </div>
-                    <Cateories>
+                    <LogoutTitle>
                         Logout
-                    </Cateories>
+                    </LogoutTitle>
                 </LogoutWrapper>
             </CategoryWrapper>
 

@@ -8,7 +8,10 @@ export const getPosts = (): Promise<ISinglePost[]> => ((dispatch:Dispatch) =>{
         .then((postList: ISinglePost[]) =>{
             dispatch({
                 type: actionTypes.GET_POSTS,
-                postList
+                data:{
+                    postList,
+                    currentPost: postList[12]
+                }
             })
 
         })

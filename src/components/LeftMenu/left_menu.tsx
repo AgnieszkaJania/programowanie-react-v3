@@ -76,6 +76,7 @@ const LeftText = styled.p`
 export const OtherIcons = styled.div`
     display:flex;
     width:20%;
+    //background-color:green;
     
 `
 const UserOptionsComponents = styled.div`
@@ -116,7 +117,7 @@ export const LeftMenu: FC = () =>{
                 <ProfileInfo>
                     <UpperProfile>
                         <ProfileElements>
-                            <UserPhoto src={fotoList[currentUser.id].url} alt="Logo" />
+                            <UserPhoto src={fotoList[currentUser.id-1].url} alt="Logo" />
                         </ProfileElements>
                         <ProfileElements>
                         <UserName>

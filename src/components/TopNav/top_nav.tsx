@@ -58,7 +58,8 @@ const LefIcons = styled.div`
 export const Cateories = styled.div`
   margin-left: 5px;
   text-decoration:none;
-  //color:red;
+  //background-color:red;
+  width:80%;
   
 `;
 
