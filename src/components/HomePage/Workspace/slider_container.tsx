@@ -25,7 +25,7 @@ const CustomSlider = styled(Slider)`
         
         /* background-color:hotpink; */
         > div{
-            padding:0 22px;
+            padding:0px 20.5px;
             /* background-color:red; */
             margin-top:10px;
             margin-bottom:10px;
@@ -34,7 +34,7 @@ const CustomSlider = styled(Slider)`
         }
     }
     button{
-        display:none;
+        visibility: hidden;
     }
    
 `
@@ -114,6 +114,8 @@ const TitleUsers = styled.div`
         /* margin-right:5px; */
     }
 `
+
+
 const Dot = styled.img`
     width:3px;
 `

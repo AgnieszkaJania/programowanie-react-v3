@@ -126,8 +126,48 @@ const ImageTexInnerDiv = styled.div`
 `
 const SectionTitleWrapper = styled(TitleWrapper)`
     margin-left:20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background-color:hotpink;
+    padding:5px;
 `
-
+const RightIcons = styled.div`
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  color: ${Colors.black};
+  margin-right:20px;
+`
+const InputFilter = styled.input`
+  background-color: ${Colors.white};
+  background-image: url("./icons/search.png");
+  background-position: right center;
+  background-repeat: no-repeat;
+  padding: 5px;
+  border: 2px solid ${Colors.lightgrey};
+  border-radius: 5px;
+  width: 200px;
+  margin-right:30px;
+  text-align: center;
+`
+const FollowIcon = styled.div`
+    width:30px;
+    height:30px;
+    background-image: url("./icons/frequency.png");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+    margin:0px 5px;
+    
+`
+const FollowButton = styled.div`
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    width:50%;
+    /* background-color:red; */
+`
 export const Workspace: FC = () =>{
     
     const { postList,fotoList, usersList, currentPost } = useSelector<IState, IPostReducer & IUsersReducer & IFotoReducer>(globalState => ({
@@ -234,13 +274,21 @@ export const Workspace: FC = () =>{
             }
             <Workspaces>
                 <SectionTitleWrapper>
-                    Workspaces
+                    <p>Workspaces</p>
                 </SectionTitleWrapper>
                 <SliderContainer/>
             </Workspaces>
             <ResumeYourWork>
                 <SectionTitleWrapper>
-                    Resume your work
+                    <p>Resume your work</p>
+                    <RightIcons>
+                        <InputFilter placeholder="Filter by title ... "/>
+                        <FollowButton>
+                            <FollowIcon/>
+                            <p>Follow</p>
+                            <img src="./icons/arrow-down.svg" alt="ArrowDown" />
+                        </FollowButton>
+                    </RightIcons>
                 </SectionTitleWrapper>
                 <ResumeYourWorkContainer/>
             </ResumeYourWork>
