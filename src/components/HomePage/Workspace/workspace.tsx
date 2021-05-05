@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { ChangeEvent, FC, useState } from 'react';
 import styled from 'styled-components';
 import { useSelector } from 'react-redux';
 import { IPostReducer } from '../../../reducers/postReducers';
@@ -8,6 +8,7 @@ import { IUsersReducer } from '../../../reducers/usersReducers';
 import { IFotoReducer } from '../../../reducers/fotoReducers';
 import { SliderContainer } from './slider_container';
 import { ResumeYourWorkContainer } from './resumeYourWorkContainer';
+import useDropdown from "react-dropdown-hook";
 
 
 
@@ -126,10 +127,11 @@ const ImageTexInnerDiv = styled.div`
 `
 const SectionTitleWrapper = styled(TitleWrapper)`
     margin-left:20px;
+    margin-bottom:5px;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    background-color:hotpink;
+    /* background-color:hotpink; */
     padding:5px;
 `
 const RightIcons = styled.div`
@@ -152,7 +154,7 @@ const InputFilter = styled.input`
   text-align: center;
 `
 const FollowIcon = styled.div`
-    width:30px;
+    min-width:30px;
     height:30px;
     background-image: url("./icons/frequency.png");
     background-position: center; /* Center the image */
@@ -165,8 +167,28 @@ const FollowButton = styled.div`
     display:flex;
     justify-content:space-around;
     align-items:center;
-    width:50%;
+    
     /* background-color:red; */
+    
+    >img{
+        margin-left:15px;
+    }
+`
+const FollowMenu = styled.div`
+    display:flex;
+    flex-direction:column;
+    position:absolute;
+    background-color:lightgray;
+    text-align:center;
+    >div{
+        padding:10px;
+    }
+    
+`
+const FollowWrapper = styled.div`
+    
+     
+
 `
 export const Workspace: FC = () =>{
     
@@ -176,6 +198,29 @@ export const Workspace: FC = () =>{
         ...globalState.foto
         
     }));
+
+    const [state, setState] = useState({
+            filter: false,
+            inputText: "",
+    });
+
+    const getmedown=(event: React.ChangeEvent<HTMLInputElement>)=>{
+        setState({
+            ...state,
+            inputText: event.target.value,
+        })
+    };
+    const [
+        wrapperRef,
+        dropdownOpen,
+        toggleDropdown,
+        
+      ] = useDropdown();
+      const menuHandler = () => {
+        console.log("kliknieto");
+        toggleDropdown();
+    };
+
     return(
         <MainBoardWrapper>
             {console.log(postList)}
@@ -281,16 +326,31 @@ export const Workspace: FC = () =>{
             <ResumeYourWork>
                 <SectionTitleWrapper>
                     <p>Resume your work</p>
-                    <RightIcons>
-                        <InputFilter placeholder="Filter by title ... "/>
-                        <FollowButton>
-                            <FollowIcon/>
-                            <p>Follow</p>
-                            <img src="./icons/arrow-down.svg" alt="ArrowDown" />
-                        </FollowButton>
-                    </RightIcons>
+                        
+                        <RightIcons>
+                           
+                            <InputFilter placeholder="Filter by title ... " onChange={getmedown} />
+                            <FollowWrapper ref={wrapperRef}>
+                                <FollowButton onClick={menuHandler}>
+                                    <FollowIcon />
+                                    <p>Follow</p>
+                                    <img src="./icons/arrow-down.svg" alt="ArrowDown" />
+                                </FollowButton>
+                                {dropdownOpen && <FollowMenu>
+                                    <div onClick={()=>{setState({...state, filter: true})}}>
+                                        Follow my
+                                    </div>
+                                    <div onClick={()=>{setState({...state, filter: false})}}>
+                                        Follow all
+                                    </div>
+                                </FollowMenu>}
+                            </FollowWrapper>
+                            
+                        </RightIcons>
+                            
+                        
                 </SectionTitleWrapper>
-                <ResumeYourWorkContainer/>
+                <ResumeYourWorkContainer filter={state.inputText} zmienna={state.filter}/>
             </ResumeYourWork>
         </MainBoardWrapper>
     );

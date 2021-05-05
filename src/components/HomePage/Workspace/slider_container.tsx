@@ -25,10 +25,10 @@ const CustomSlider = styled(Slider)`
         
         /* background-color:hotpink; */
         > div{
-            padding:0px 20.5px;
-            /* background-color:red; */
-            margin-top:10px;
-            margin-bottom:10px;
+            margin: 10px 17px;
+            background-color:red;
+            /* margin-top:10px;
+            margin-bottom:10px; */
             display:flex;
             justify-content:flex-start;   
         }
@@ -103,7 +103,7 @@ const SliderFooter = styled.div`
     /* background-color:hotpink; */
     
 `
-const TitleUsers = styled.div`
+export const TitleUsers = styled.div`
     display:flex;
     align-items:center;
     justify-content:space-around;
@@ -116,7 +116,7 @@ const TitleUsers = styled.div`
 `
 
 
-const Dot = styled.img`
+export const Dot = styled.img`
     width:3px;
 `
 const LastUpdated = styled.div`
@@ -211,7 +211,7 @@ export const SliderContainer: FC = () =>{
                         <SliderFooter>
                             <TitleUsers>
                                 <img src="./icons/administration.png" alt="Administration"/>
-                                <p>Contract</p>
+                                <p>Norms</p>
                                 <Dot src="./icons/black-circle.png" alt="Dot" />
                                 <img src="./icons/people.png" alt="People"/>
                                 <p> 25 users</p>
