@@ -24,17 +24,7 @@ const Content = styled.div`
 
 export const Ecosystem: FC = () =>{
     
-    return(
-        <Wrapper>
-            <TopNav chosenItem="Ecosystem" iconName="ecosystem.png"/>
-            <Content>
-                <LeftMenu/>
-               <MainBoardWrapper>
-               Ecosystem
-               </MainBoardWrapper>
-                
-            </Content>
-        </Wrapper>
+    return(<>Ecosystem</>
     );
       
 };

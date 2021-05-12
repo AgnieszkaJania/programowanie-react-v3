@@ -3,7 +3,7 @@ import * as actionTypes from '../actions/actionTypes/postTypes';
 
 export interface IPostReducer{
     postList: ISinglePost[];
-    currentPost: ISinglePost;
+    currentPost: ISinglePost | undefined;
 }
 
 const defaultState = (): IPostReducer =>({

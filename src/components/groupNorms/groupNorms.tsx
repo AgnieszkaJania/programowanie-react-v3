@@ -1,40 +1,16 @@
-import React, { FC } from 'react';
-import styled from 'styled-components';
-import { Colors } from '../../styledHelpers/Colors';
-import { TopNav } from '../TopNav/top_nav';
-import { LeftMenu } from '../LeftMenu/left_menu';
-import { MainBoardWrapper } from '../HomePage/Workspace/workspace';
+import React, { FC, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { SetData, setData } from '../../actions/topMenuItem';
 
-const Wrapper = styled.div`
-    background-color: ${Colors.white};
-    display:flex;
-    flex-direction:column;
-    padding:10px;
-    
-    
-`;
-const Content = styled.div`
-    background-color:${Colors.backgroundColor};
-    padding: 20px; 
-    display:flex;
-    
-`;
 
 
 
 export const GroupNorms: FC = () =>{
-    
-    return(
-        <Wrapper>
-            <TopNav chosenItem="Group Norms" iconName="administration.png"/>
-            <Content>
-                <LeftMenu/>
-               <MainBoardWrapper>
-               Group Norms
-               </MainBoardWrapper>
-                
-            </Content>
-        </Wrapper>
+    const dispatch = useDispatch();
+    useEffect(()=>{
+        dispatch<SetData>(setData("Group norms", "./icons/administration.png"))
+    });
+    return(<>Group Norms</>
     );
       
 };

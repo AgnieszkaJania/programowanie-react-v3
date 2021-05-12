@@ -229,15 +229,15 @@ export const Workspace: FC = () =>{
                     <ImageText>
                            <ImageTexInnerDiv>
                                 <TitlePublicationContainer>
-                                        {currentPost.title}
+                                        {currentPost?.title || ""}
                                 </TitlePublicationContainer>
                                 <UserInfoContainer>
                                     <DateUserContainer>
                                         <p>7 jan. 2020</p>
                                     </DateUserContainer>
-                                    <PostUserPhoto src={fotoList[currentPost.userId - 1].url} alt="User logo"/>
+                                    <PostUserPhoto src={fotoList[currentPost?.userId|| -1]?.url || ""} alt="User logo"/>
                                     <MainNameUserContainer>
-                                        {usersList[currentPost.userId - 1].name}
+                                        {usersList?.find(a => a?.id === currentPost?.userId)?.name || ""}
                                     </MainNameUserContainer>
 
                                                 
@@ -257,15 +257,15 @@ export const Workspace: FC = () =>{
                                     <ArticleImage/>
                                     <TextContainer>
                                         <TitlePublicationContainer>
-                                            {currentPost.title}
+                                            {currentPost?.title}
                                         </TitlePublicationContainer>
                                         <UserInfoContainer>
                                             <DateUserContainer>
                                                 <p>7 jan. 2020</p>
                                             </DateUserContainer>
-                                            <PostUserPhoto src={fotoList[currentPost.userId - 1].url} alt="User logo"/>
+                                            <PostUserPhoto src={fotoList[currentPost?.userId || -1]?.url} alt="User logo"/>
                                             <NameUserContainer>
-                                                {usersList[currentPost.userId - 1].name}
+                                                {usersList?.find(a => a?.id === currentPost?.userId)?.name || ""}
                                             </NameUserContainer>
 
                                         
@@ -276,15 +276,15 @@ export const Workspace: FC = () =>{
                                     <ArticleImage/>
                                     <TextContainer>
                                         <TitlePublicationContainer>
-                                            {currentPost.title}
+                                            {currentPost?.title || ""}
                                         </TitlePublicationContainer>
                                         <UserInfoContainer>
                                             <DateUserContainer>
                                                 <p>7 jan. 2020</p>
                                             </DateUserContainer>
-                                            <PostUserPhoto src={fotoList[currentPost.userId - 1].url} alt="User logo"/>
+                                            <PostUserPhoto src={fotoList[currentPost?.userId || -1].url} alt="User logo"/>
                                             <NameUserContainer>
-                                                {usersList[currentPost.userId - 1].name}
+                                                {usersList?.find(a => a?.id === currentPost?.userId)?.name || ""}
                                             </NameUserContainer>
 
                                         
@@ -295,15 +295,15 @@ export const Workspace: FC = () =>{
                                     <ArticleImage/>
                                     <TextContainer>
                                         <TitlePublicationContainer>
-                                            {currentPost.title}
+                                            {currentPost?.title || ""}
                                         </TitlePublicationContainer>
                                         <UserInfoContainer>
                                             <DateUserContainer>
                                                 <p>7 jan. 2020</p>
                                             </DateUserContainer>
-                                            <PostUserPhoto src={fotoList[currentPost.userId - 1].url} alt="User logo"/>
+                                            <PostUserPhoto src={fotoList[currentPost?.userId || -1]?.url || ""} alt="User logo"/>
                                             <NameUserContainer>
-                                                {usersList[currentPost.userId - 1].name}
+                                                {usersList?.find(a => a?.id === currentPost?.userId)?.name || ""}
                                             </NameUserContainer>
 
                                         

@@ -4,6 +4,9 @@ import { Wrapper } from "../../styledHelpers/Components";
 import { Colors } from "../../styledHelpers/Colors";
 import useDropdown from "react-dropdown-hook";
 import { ExpandedMenu } from "../TopNav/ExpandedMenu";
+import { ITopMenuReducer } from "../../reducers/topMenuItems";
+import { IState } from "../../reducers";
+import { useSelector } from "react-redux";
 
 const InnerWrapper = styled.div`
   width: 100%;
@@ -81,6 +84,12 @@ const ChosenItem = styled.div`
 `;
 const TopNavImage = styled.div`
   width:35px;
+  display:flex;
+  align-items:center;
+  >img{
+    max-width:35px;
+    border-radius:50px;
+  }
 `
 const BackgroundImageDiv = styled.div`
   position:relative;
@@ -95,11 +104,8 @@ const Notifications = styled.div`
   right:0px;
   padding:0px 5px;
 `
-interface ITopNav {
-  chosenItem: string;
-  iconName?: string;
-}
-export const TopNav: FC<ITopNav> = (props) => {
+
+export const TopNav: FC = () => {
   const [
     wrapperRef,
     dropdownOpen,
@@ -110,6 +116,13 @@ export const TopNav: FC<ITopNav> = (props) => {
     console.log("kliknieto");
     toggleDropdown();
   };
+  const {
+    data
+  } = useSelector<IState, ITopMenuReducer>(
+    (globalState) => ({
+      ...globalState.data
+    })
+  );
 
   return (
     <Wrapper>
@@ -123,9 +136,9 @@ export const TopNav: FC<ITopNav> = (props) => {
             <SelectOption onClick={menuHandler}>
               <ChosenItem>
                 <TopNavImage>
-                  <img src={"./icons/" + (props.iconName || "house.png")} alt="House" />
+                  <img src={(data?.icon || "house.png")} alt="House" />
                 </TopNavImage>
-                <Cateories>{props.chosenItem}</Cateories>
+                <Cateories>{data?.name || ""}</Cateories>
               </ChosenItem>
               <img src="./icons/arrow-down.svg" alt="ArrowDown" />
             </SelectOption>

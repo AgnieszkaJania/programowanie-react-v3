@@ -238,10 +238,14 @@ export const ExpandedMenu: FC =()=>{
                         </MenuItem>
                     }
                     <MenuItem>
-                        <MenuPhoto src={fotoList[currentUser.id-1].url} alt="Logo"/> 
+                        <MenuPhoto src={fotoList.find(x=>x.id === currentUser?.id)?.url || ""} alt="Logo"/> 
                         <Cateories>
                             {usersList[0].name}
-                            <div>See profile</div>
+                            <div>
+                                <BetterLink to="/profile">
+                                    See profile
+                                </BetterLink>
+                            </div>
                         </Cateories>
                         
                     </MenuItem>

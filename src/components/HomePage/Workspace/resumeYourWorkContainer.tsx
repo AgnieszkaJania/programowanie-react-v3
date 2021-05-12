@@ -104,7 +104,7 @@ export const ResumeYourWorkContainer: FC<ICostam> = (props) => {
   );
   
     const zmien1=()=>{
-      const a = comment.filter(a=>a.id in [...postList.filter(b=>b.userId === currentUser.id)]);
+      const a = comment.filter(a=>a.id in [...postList.filter(b=>b.userId === currentUser?.id)]);
       console.log(a);
         setState({
           ...state,
@@ -152,8 +152,8 @@ export const ResumeYourWorkContainer: FC<ICostam> = (props) => {
               <Dot src="./icons/black-circle.png" alt="Dot" />
               <Update>
                 <span>Last updated 3 days ago by </span>
-                {usersList.length > 0 &&
-                  <>{usersList.find(a=>a.id === postList.find(b=>b.id===item.postId).userId).name}</>
+                {usersList?.length > 0 &&
+                  <>{usersList?.find(a=>a?.id === postList?.find(b=>b?.id===item?.postId)?.userId)?.name || ""}</>
                 }
                 
               </Update>

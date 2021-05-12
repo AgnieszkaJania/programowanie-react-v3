@@ -3,7 +3,7 @@ import * as actionTypes from '../actions/actionTypes/userTypes';
  
 export interface IUsersReducer{
     usersList: ISingleUser[];
-    currentUser: ISingleUser;
+    currentUser: ISingleUser | undefined;
 }
 
 const defaultState = (): IUsersReducer =>({

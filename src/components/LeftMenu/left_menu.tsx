@@ -117,7 +117,7 @@ export const LeftMenu: FC = () =>{
                 <ProfileInfo>
                     <UpperProfile>
                         <ProfileElements>
-                            <UserPhoto src={fotoList[currentUser.id-1].url} alt="Logo" />
+                            <UserPhoto src={fotoList.find(a=>a.id === currentUser?.id)?.url || ""} alt="Logo" />
                         </ProfileElements>
                         <ProfileElements>
                         <UserName>
