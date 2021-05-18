@@ -21,6 +21,7 @@ const CommentWrapper = styled.div`
   margin-bottom: 10px;
   display: flex;
   flex-direction: column;
+  z-index:0;
 `;
 const CommentTitle = styled.p`
     color:${Colors.blue};

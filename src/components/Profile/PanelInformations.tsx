@@ -16,22 +16,28 @@ const PanleInfoContainer = styled.div`
 `
 const Title = styled.div`
     font-weight:bold;
+    /* font-size:20px; */
+    margin:20px 0px;
     
 `
 const SmallTitles = styled.div`
     color:grey;
+    margin-bottom:10px;
 `
 const Paragraf = styled.div`
+    margin-bottom:10px;
 
 `
 const CorContainer = styled.div`
 
 `
+
 const Correspondant = styled.div`
     background-color:#ecf8f8;
     display:flex;
     margin:5px 0px;
     padding:5px;
+    align-items:center;
     >img{
         width:30px;
         height:30px;
@@ -56,6 +62,27 @@ const TopOneIcon = styled.div`
     height:20px;
   }
 `;
+
+const ButtonWrap = styled.div`
+    /* position:relative; */
+`
+const NewButton = styled.label`
+    display: inline-block;
+    padding: 8px 12px; 
+    cursor: pointer;
+    border-radius: 4px;
+    background-color: #ecf8f8;
+    font-size: 16px;
+    
+    
+`
+const InputFile=styled.input`
+    /* position: absolute; */
+   
+  
+   
+`
+
 
 export const PanelInformations: FC=()=>{
 
@@ -86,7 +113,10 @@ export const PanelInformations: FC=()=>{
             <Paragraf>
                 Monthly 10k€ retainer - see with Jenny Smith
             </Paragraf>
-            <input type="file"></input>
+            <ButtonWrap/>
+                <NewButton>
+                <InputFile type="file"/>
+                </NewButton> 
             <Title>
                 Services and projects
             </Title>
@@ -100,9 +130,9 @@ export const PanelInformations: FC=()=>{
                 <Correspondant>
                     
                     <img src={fotoList.find(a=>a.id === usersList[1]?.id)?.url} alt="Correspondant"/>
-                   <Title>
-                    {usersList[1]?.name}
-                   </Title>
+                    <div>
+                        {usersList[1]?.name}
+                    </div>
                     <div>
                         <TopOneIcon>
                             <img src="./icons/comments.png" alt="Message" />
@@ -119,9 +149,9 @@ export const PanelInformations: FC=()=>{
                 <Correspondant>
                     
                     <img src={fotoList.find(a=>a.id === usersList[1]?.id)?.url} alt="Correspondant"/>
-                   <Title>
-                    {usersList[1]?.name}
-                   </Title>
+                    <div>
+                        {usersList[1]?.name}
+                    </div>
                     <div>
                         <TopOneIcon>
                             <img src="./icons/comments.png" alt="Message" />

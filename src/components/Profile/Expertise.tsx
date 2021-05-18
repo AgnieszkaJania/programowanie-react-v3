@@ -15,6 +15,7 @@ const Title = styled.div`
 `
 const ChosenCategories=styled.div`
     display:flex;
+    margin: 10px 0px;
 `
 const StyledSelect = styled.select`
     &::-ms-expand{display:none}

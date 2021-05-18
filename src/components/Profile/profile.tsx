@@ -13,6 +13,8 @@ import { EditProfileUserData } from "./editProfileUserData";
 import { Expertise } from "./Expertise";
 import { PanelInformations } from "./PanelInformations";
 import { Proposals } from "./Proposals";
+import { InternalRewiews } from "./InternalRewiews";
+import { AmountOfFees } from "./AmountOfFees";
 
 
 const EditIcon = styled.img`
@@ -38,12 +40,13 @@ const ProfileWrapper = styled.div`
 const TopIcons = styled.div`
   display: flex;
   justify-content: flex-end;
-  width: 100%;
+  width: 80%;
+  /* background-color:pink; */
 `;
 const TopOneIcon = styled.div`
   display: flex;
   justify-content: space-around;
-  margin: 5px 15px;
+  margin: 10px 0px 15px 10px;
   >img{
     width:20px;
     height:20px;
@@ -60,7 +63,11 @@ const CustomContainer = styled.div`
   width:80%;
   /* background-color:hotpink; */
   position:relative;
+  margin-top:10px;
   border-bottom:1px solid grey;
+`
+const CustomContainerBorder = styled(CustomContainer)`
+  border-color:white;
 `
 
 export const Profile: FC = () => {
@@ -172,16 +179,18 @@ export const Profile: FC = () => {
             />
           }
         </CustomContainer>
-        <CustomContainer>
+        <CustomContainerBorder>
           <EditIcon  src="./icons/pencil.png"/>
           <Expertise/>
-        </CustomContainer>
+        </CustomContainerBorder>
         <CustomContainer>
           <PanelInformations/>
         </CustomContainer>
-        <CustomContainer>
+        <CustomContainerBorder>
           <Proposals/>
-        </CustomContainer>
+          <InternalRewiews/>
+          <AmountOfFees/>
+        </CustomContainerBorder>
        
       </ProfileWrapper>
     </MainBoardWrapper>

@@ -1,9 +1,8 @@
 import React, { FC } from "react";
 import styled from "styled-components";
-import { TableRow } from "./TableRow";
+import { TableRowInternalRew } from "./TableRowInternalRew";
 
-
-const ProposalsContainer=styled.div`
+const InternalRewiewsContainer=styled.div`
     color:black;
     border-bottom:1px solid grey;
     table{
@@ -28,14 +27,12 @@ const Title = styled.div`
     margin: 20px 0px;
     
 `
-
-
-export const Proposals: FC=()=>{
+export const InternalRewiews: FC=()=>{
 
     return(
-        <ProposalsContainer>
+        <InternalRewiewsContainer>
             <Title>
-                Proposals
+                Internal Rewiews
             </Title>
             <table>
                 <thead>
@@ -45,16 +42,19 @@ export const Proposals: FC=()=>{
                         <th>Location</th>
                         <th>Expertise</th>
                         <th>Date</th>
-                        <th>Firm</th>
                     </tr>
                 </thead>
-               <tbody>
-                    <TableRow/>
-                    <TableRow/>
-                    <TableRow/>
-               </tbody>
+                <tbody>
+                    <TableRowInternalRew/>
+                    <TableRowInternalRew/>
+                    <TableRowInternalRew/>
+                </tbody>
+               
             </table>
-           
-        </ProposalsContainer>
+            <Title>
+                See more Reviews
+            </Title>
+        </InternalRewiewsContainer>
     )
+
 }
