@@ -70,8 +70,6 @@ export const EditProfileUserData: FC<IData> = (p) => {
       ...state,
       name: event.target.value
     })
-
-    p.change(state);
   }
 
   const setCompany=(event: React.ChangeEvent<HTMLInputElement>)=>{
@@ -79,8 +77,30 @@ export const EditProfileUserData: FC<IData> = (p) => {
       ...state,
       companyName: event.target.value
     })
-
-    p.change(state);
+  }
+  const setCity=(event: React.ChangeEvent<HTMLInputElement>)=>{
+    setState({
+      ...state,
+      city: event.target.value
+    })
+  }
+  const setPartner=(event: React.ChangeEvent<HTMLInputElement>)=>{
+    setState({
+      ...state,
+      partner: event.target.value
+    })
+  }
+  const setPhone=(event: React.ChangeEvent<HTMLInputElement>)=>{
+    setState({
+      ...state,
+      phone: event.target.value
+    })
+  }
+  const setEmail=(event: React.ChangeEvent<HTMLInputElement>)=>{
+    setState({
+      ...state,
+      email: event.target.value
+    })
   }
   
     return(
@@ -96,14 +116,19 @@ export const EditProfileUserData: FC<IData> = (p) => {
             <DescProfileComponent>
               <input type="text" value={state.name} onChange={setName}/>
               <input type="text" value={state.companyName} onChange={setCompany} ></input>
-              <input type="text" value={state.city} ></input>
-              <input type="text" value={state.partner} ></input>
+              <input type="text" value={state.city} onChange={setCity}></input>
+              <input type="text" value={state.partner} onChange={setPartner}></input>
             </DescProfileComponent>
           </ProfileInfo>
           <ContactProfileImfo>
-                <input type="text" value={state.phone} ></input>
-                <input type="text" value={state.email} ></input>
+                <input type="text" value={state.phone} onChange={setPhone} ></input>
+                <input type="text" value={state.email} onChange={setEmail}></input>
           </ContactProfileImfo>
+          <button onClick={
+            ()=>{
+              p.change(state);
+            }
+          }>Click me</button>
         </ProfileContainer>
     )
 

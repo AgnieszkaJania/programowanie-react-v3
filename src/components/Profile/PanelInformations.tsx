@@ -1,9 +1,7 @@
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import styled from "styled-components";
-import { IState } from "../../reducers";
-import { IUsersReducer } from "../../reducers/usersReducers";
-import { IFotoReducer } from "../../reducers/fotoReducers";
-import { useSelector } from "react-redux";
+import { IPanelInformations } from "./PanelInformationsNotE";
+
 
 
 const PanleInfoContainer = styled.div`
@@ -13,6 +11,14 @@ const PanleInfoContainer = styled.div`
   justify-content:space-between;
   /* background-color:pink; */
   color:black;
+  position:relative;
+  img{
+      position:absolute;
+      right:0;
+      top:10%;
+      width:40px;
+      height:40px;
+  }
 `
 const Title = styled.div`
     font-weight:bold;
@@ -28,40 +34,9 @@ const Paragraf = styled.div`
     margin-bottom:10px;
 
 `
-const CorContainer = styled.div`
 
-`
 
-const Correspondant = styled.div`
-    background-color:#ecf8f8;
-    display:flex;
-    margin:5px 0px;
-    padding:5px;
-    align-items:center;
-    >img{
-        width:30px;
-        height:30px;
-        border-radius:50px;
-    }
-    >div{
-        /* font-weight:bold; */
-        display:flex;
-        /* background-color:pink; */
-        align-items:center;
-        margin-left:10px;
-    }
 
-`
-
-const TopOneIcon = styled.div`
-  display: flex;
-  justify-content: space-around;
-  margin: 5px 15px;
-  >img{
-    width:20px;
-    height:20px;
-  }
-`;
 
 const ButtonWrap = styled.div`
     /* position:relative; */
@@ -82,36 +57,65 @@ const InputFile=styled.input`
   
    
 `
+interface IDataPanel{
+    data:IPanelInformations,
+    change: (a:IPanelInformations)=>void
+}
 
-
-export const PanelInformations: FC=()=>{
-
-    const {
-        fotoList,
-        usersList,
-      } = useSelector<IState, IUsersReducer & IFotoReducer>(
-        (globalState) => ({
-          ...globalState.users,
-          ...globalState.foto,
+export const PanelInformations: FC<IDataPanel>=(propsy)=>{
+    const [state, setState]= useState({
+        info1:propsy.data.info1,
+        info2:propsy.data.info2,
+        info3:propsy.data.info3,
+        info4:propsy.data.info4,
+        info5:propsy.data.info5,
+    })
+    const setInfo1=(event: React.ChangeEvent<HTMLInputElement>)=>{
+        setState({
+          ...state,
+          info1: event.target.value
         })
-      );
-
+    }
+    const setInfo2=(event: React.ChangeEvent<HTMLInputElement>)=>{
+        setState({
+          ...state,
+          info2: event.target.value
+        })
+    }
+    const setInfo3=(event: React.ChangeEvent<HTMLInputElement>)=>{
+        setState({
+          ...state,
+          info3: event.target.value
+        })
+    }
+    const setInfo4=(event: React.ChangeEvent<HTMLInputElement>)=>{
+        setState({
+          ...state,
+          info4: event.target.value
+        })
+    }
+    const setInfo5=(event: React.ChangeEvent<HTMLInputElement>)=>{
+        setState({
+          ...state,
+          info5: event.target.value
+        })
+    }
     return(
         <PanleInfoContainer>
             <Title>
                 Panel informations
             </Title>
             <SmallTitles>
-                Hourly fee
+                <input type="text" value={state.info1} onChange={setInfo1}/>
             </SmallTitles>
             <Paragraf>
-                610€/hour (Negociated)
+                <input type="text" value={state.info2} onChange={setInfo2}/>
             </Paragraf>
             <SmallTitles>
-            Terms and conditions
+                <input type="text" value={state.info3} onChange={setInfo3}/>
             </SmallTitles>
             <Paragraf>
-                Monthly 10k€ retainer - see with Jenny Smith
+                <input type="text" value={state.info4} onChange={setInfo4}/>
             </Paragraf>
             <ButtonWrap/>
                 <NewButton>
@@ -121,51 +125,14 @@ export const PanelInformations: FC=()=>{
                 Services and projects
             </Title>
             <Paragraf>
-                Corporate M&A and international acquisitions
+                <input type="text" value={state.info5} onChange={setInfo5}/>
             </Paragraf>
             <Title>
                 International corespondants
             </Title>
-            <CorContainer>
-                <Correspondant>
-                    
-                    <img src={fotoList.find(a=>a.id === usersList[1]?.id)?.url} alt="Correspondant"/>
-                    <div>
-                        {usersList[1]?.name}
-                    </div>
-                    <div>
-                        <TopOneIcon>
-                            <img src="./icons/comments.png" alt="Message" />
-                        </TopOneIcon>
-                        <p>Message</p>
-                    </div>
-                    <div>
-                        <TopOneIcon>
-                            <img src="./icons/people.png" alt="Profile" />
-                        </TopOneIcon>
-                        <p>Profile</p>
-                    </div>
-                </Correspondant>
-                <Correspondant>
-                    
-                    <img src={fotoList.find(a=>a.id === usersList[1]?.id)?.url} alt="Correspondant"/>
-                    <div>
-                        {usersList[1]?.name}
-                    </div>
-                    <div>
-                        <TopOneIcon>
-                            <img src="./icons/comments.png" alt="Message" />
-                        </TopOneIcon>
-                        <p>Message</p>
-                    </div>
-                    <div>
-                        <TopOneIcon>
-                            <img src="./icons/people.png" alt="Profile" />
-                        </TopOneIcon>
-                        <p>Profile</p>
-                    </div>
-                </Correspondant>
-            </CorContainer>
+            <img src="./icons/floppy-disk.png" alt="Save"  onClick={()=>{
+                propsy.change(state)
+            }}/>
         </PanleInfoContainer>
     )
 }

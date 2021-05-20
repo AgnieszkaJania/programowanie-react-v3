@@ -1,5 +1,6 @@
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import styled from "styled-components";
+import { IExpertise } from "./ExpertiseNotEdited";
 
 
 const ExpertiseContainer = styled.div`
@@ -8,6 +9,14 @@ const ExpertiseContainer = styled.div`
   flex-direction:column;
   justify-content:space-between;
   /* background-color:pink; */
+  position:relative;
+  img{
+      position:absolute;
+      right:0;
+      top:10%;
+      width:40px;
+      height:40px;
+  }
   
 `
 const Title = styled.div`
@@ -33,20 +42,67 @@ const StyledSelect = styled.select`
 
 
 `
-
-export const Expertise: FC = () => {
+interface IData2{
+    data:IExpertise,
+    change: (a:IExpertise)=>void
+}
+export const Expertise: FC<IData2> = (propsy) => {
+    const [state, setState]= useState({
+        expertise: propsy.data.expertise,
+        specialities1: propsy.data.specialities1,
+        specialities2: propsy.data.specialities2,
+        admission1: propsy.data.admission1,
+        admission2: propsy.data.admission2,
+        countries: propsy.data.countries,
+    });
+    const setExpertise=(event: React.ChangeEvent<HTMLSelectElement>)=>{
+        setState({
+          ...state,
+          expertise: event.target.value
+        })
+    }
+    const setSpecialities1=(event: React.ChangeEvent<HTMLSelectElement>)=>{
+        setState({
+          ...state,
+          specialities1: event.target.value
+        })
+    }
+    const setSpecialities2=(event: React.ChangeEvent<HTMLSelectElement>)=>{
+        setState({
+          ...state,
+          specialities2: event.target.value
+        })
+    }
+    const setAdmission1=(event: React.ChangeEvent<HTMLSelectElement>)=>{
+        setState({
+          ...state,
+          admission1: event.target.value
+        })
+    }
+    const setAdmission2=(event: React.ChangeEvent<HTMLSelectElement>)=>{
+        setState({
+          ...state,
+          admission2: event.target.value
+        })
+    }
+    const setCountries=(event: React.ChangeEvent<HTMLSelectElement>)=>{
+        setState({
+          ...state,
+          countries: event.target.value
+        })
+    }
         return(
             <ExpertiseContainer>
                 <Title>
                     Expertise
                 </Title>
                <ChosenCategories>
-                    <StyledSelect >
-                        <option>Mergers and acquisitions</option>
-                        <option>sel 1</option>
-                        <option>sel 2</option>
-                        <option>sel 3</option>
-                        <option>sel 4</option>
+                    <StyledSelect onChange={setExpertise}>
+                        <option>{state.expertise}</option>
+                        <option>Other mergers</option>
+                        <option>Other acquisitions</option>
+                        <option>Wide cooperation</option>
+                        <option>Invade company</option>
                     </StyledSelect>
                     
                </ChosenCategories>
@@ -55,52 +111,55 @@ export const Expertise: FC = () => {
                     Specialties
                 </Title>
                 <ChosenCategories>
-                    <StyledSelect >
-                            <option>Cross border operation</option>
-                            <option>sel 1</option>
-                            <option>sel 2</option>
-                            <option>sel 3</option>
-                            <option>sel 4</option>
+                    <StyledSelect onChange={setSpecialities1} >
+                            <option>{state.specialities1}</option>
+                            <option>Domestic operations</option>
+                            <option>International operations</option>
+                            <option>Other operations</option>
+                            <option>International cooperation</option>
                     </StyledSelect>
-                    <StyledSelect >
-                            <option>Transaction over 500M$/€</option>
-                            <option>sel 1</option>
-                            <option>sel 2</option>
-                            <option>sel 3</option>
-                            <option>sel 4</option>
+                    <StyledSelect onChange={setSpecialities2}>
+                            <option>{state.specialities2}</option>
+                            <option>Transaction over 5000M$/€</option>
+                            <option>Transaction over 50000M$/€</option>
+                            <option>Transaction over 100000M$/€</option>
+                            <option>Transaction over 1000000M$/€</option>
                     </StyledSelect>
                </ChosenCategories>
                 <Title>
                     Admission to practice law
                 </Title>
                     <ChosenCategories>
-                        <StyledSelect >
-                            <option>Paris bar association</option>
-                            <option>sel 1</option>
-                            <option>sel 2</option>
-                            <option>sel 3</option>
-                            <option>sel 4</option>
+                        <StyledSelect onChange={setAdmission1}>
+                            <option>{state.admission1}</option>
+                            <option>Berlin bar association</option>
+                            <option>Warsaw bar association</option>
+                            <option>Stockholm bar association</option>
+                            <option>London bar association</option>
                         </StyledSelect>
-                        <StyledSelect >
-                            <option>Tunisian bar association</option>
-                            <option>sel 1</option>
-                            <option>sel 2</option>
-                            <option>sel 3</option>
-                            <option>sel 4</option>
+                        <StyledSelect onChange={setAdmission2}>
+                            <option>{state.admission2}</option>
+                            <option>Polish bar association</option>
+                            <option>British bar association</option>
+                            <option>American bar association</option>
+                            <option>Thai bar association</option>
                         </StyledSelect>
                     </ChosenCategories>
                 <Title>
                     Countries
                 </Title>
                     <ChosenCategories>
-                        <StyledSelect >
-                            <option>Tunisia</option>
+                        <StyledSelect onChange={setCountries}>
+                            <option>{state.countries}</option>
                             <option>Poland</option>
                             <option>Sweden</option>
                             <option>Germany</option>
                             <option>Spain</option>
                         </StyledSelect>
                     </ChosenCategories>
+                    <img src="./icons/floppy-disk.png" alt="Save" onClick={()=>{
+                        propsy.change(state)
+                    }}/>
             </ExpertiseContainer>
         )
 }

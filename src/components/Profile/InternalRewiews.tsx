@@ -27,7 +27,10 @@ const Title = styled.div`
     margin: 20px 0px;
     
 `
-export const InternalRewiews: FC=()=>{
+interface IInternalRewiev{
+    editable:boolean
+}
+export const InternalRewiews: FC<IInternalRewiev>=(prop)=>{
 
     return(
         <InternalRewiewsContainer>
@@ -45,9 +48,16 @@ export const InternalRewiews: FC=()=>{
                     </tr>
                 </thead>
                 <tbody>
-                    <TableRowInternalRew/>
-                    <TableRowInternalRew/>
-                    <TableRowInternalRew/>
+                    {prop.editable &&
+                        <TableRowInternalRew/>
+                    }
+                     {prop.editable &&
+                        <TableRowInternalRew/>
+                    }
+                     {prop.editable &&
+                        <TableRowInternalRew/>
+                    }
+                    
                 </tbody>
                
             </table>

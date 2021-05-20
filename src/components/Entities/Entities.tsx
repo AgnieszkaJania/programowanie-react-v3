@@ -62,11 +62,45 @@ const Description = styled.div`
     text-align:left;
     font-size:12px;
 `
+const HeaderContainer = styled.div`
+    display:flex;
+    justify-content:space-between;
+    /* background-color:yellow; */
+`
+const MosaicMenu = styled.div`
+    display:flex;
+    /* background-color:red; */
+    border:1px solid lightgray;
+    border-radius:3px;
+
+`
+const Mosaic = styled.div`
+    display:flex;
+    padding:5px;
+    justify-content:center;
+    align-items:center;
+    background-color:#c6d1e0;
+    color:${Colors.blue};
+    font-weight:bold;
+    img{
+        width:20px;
+        height:20px;
+    }
+    p{
+        margin-left:5px;
+    }
+`
+const Menu = styled.div`
+    display:flex;
+    padding:5px;
+    img{
+        width:30px;
+        height:30px;
+    }
+`
 const TitleContainer = styled.div`
     display:flex;
     align-items:center;
-    /* background-color:hotpink; */
-    height:10%;
     p{
         font-weight:bold;
         font-size:30px;
@@ -77,10 +111,92 @@ const TitleContainer = styled.div`
         margin-left:20px;
     }
 `
+const OptionsMainContainer = styled.div`
+    display:flex;
+    width:100%;
+    justify-content:space-between;
+    margin:10px 0px;
+`
+const InputFilter = styled.input`
+  background-color: ${Colors.white};
+  background-image: url("./icons/search.png");
+  background-position: right center;
+  background-repeat: no-repeat;
+  padding: 3px;
+  border: 2px solid ${Colors.lightgrey};
+  border-radius: 5px;
+  width: 150px;
+  margin-right:30px;
+  text-align: left;
+`
+const RightIcons = styled.div`
+    display:flex;
+`
+const LeftIcons = styled.div`
+    display:flex;
+`
+const IconContainer= styled.div`
+    border-left:1px solid lightgray;
 
+`
+const LeftIconsContainer=styled.div`
+    border-right: 1px solid lightgray;
+    padding-right:10px;
+    display:flex;
+    align-items:center;
+    img{
+        width:25px;
+        height:25px;
+        margin-left:10px;
+    }
+    p{
+        margin-left:5px;
+    }
+`
+const FollowContainer = styled.div`
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border: 2px solid blue;
+    border-radius:3px;
+    margin-left:30px;
+    padding:2px;
+    color:blue;
+    img{
+        margin-left:10px;
+    }
 
-
-export const Entities: FC = () =>{
+`
+const AllContainer = styled.div`
+    background-color:#c6d1e0;
+    border-bottom:1px outset lightgray;
+    border-radius:3px;
+    color:blue;
+    display:flex;
+    align-items:center;
+    padding:5px;
+    img{
+        width:15px;
+        height:15px;
+    }
+    p{
+        margin:0px 5px;
+    }
+`
+const FollowIcon = styled.div`
+    min-width:30px;
+    height:30px;
+    background-image: url("./icons/frequency.png");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+    margin:0px 5px;
+    
+`
+interface IEntities{
+    filter:string
+}
+export const Entities: FC<IEntities> = (props) =>{
     const {
         fotoList,
       } = useSelector<IState, IPostReducer & IUsersReducer & IFotoReducer>(
@@ -95,14 +211,70 @@ export const Entities: FC = () =>{
     useEffect(()=>{
         dispatch<SetData>(setData("Entities", "./icons/entities.png"))
     },[fotoList]);
-   const PerPage = fotoList.slice(0,24);
+   const PerPage = fotoList.slice(0,32);
+   
+//    const PerPage = [{
+//     fotoId : 0,
+//     title: "text",
+//     des : "23123"
+//    },
+//{
+
+//}]
     return(
         <EntitiesWrapper>
             
-            <TitleContainer>
-                <p>Entities</p>
-                <img src="./icons/cog.png" alt="Settings"/>
-            </TitleContainer>
+            <HeaderContainer>
+                <TitleContainer>
+                    <p>Entities</p>
+                    <img src="./icons/cog.png" alt="Settings"/>
+                </TitleContainer>
+                <MosaicMenu>
+                    <Mosaic>
+                        <img src="./icons/mosaic.png" alt="Mosaic"/>
+                        <p>Mosaic</p>
+                    </Mosaic>
+                    <Menu>
+                        <img src="./icons/menu.png" alt="Menu"/>
+                    </Menu>
+                </MosaicMenu>
+            </HeaderContainer>
+            <OptionsMainContainer>
+                <LeftIcons>
+                    <LeftIconsContainer>
+                        <AllContainer>
+                            <img src="./icons/button.png" alt="Button"/>
+                            <p>All</p>
+                            <img src="./icons/arrow-down.svg" alt="Arrow"/>
+                        </AllContainer>
+                    </LeftIconsContainer>
+                    <LeftIconsContainer>
+                        <img src="./icons/sort.png" alt="Sort"/>
+                        <p>Sort</p>
+                        <img src="./icons/filter.png" alt="Filter"/>
+                        <p>Filters</p>
+                    </LeftIconsContainer>
+                    <LeftIconsContainer>
+                        <img src="./icons/expand.png" alt="Expand"/>
+                    </LeftIconsContainer>
+                    <LeftIconsContainer>
+                        <img src="./icons/share.png" alt="Share"/>
+                        <p>Share</p>
+                    </LeftIconsContainer>
+
+                    
+                </LeftIcons>
+                <RightIcons>
+                    <InputFilter placeholder="Search ..."/>
+                    <IconContainer>
+                        <FollowContainer>
+                            <FollowIcon/>
+                            <p>Followed</p>
+                            <img src="./icons/arrow-down.svg" alt="ArrowDown" />
+                        </FollowContainer>
+                    </IconContainer>
+                </RightIcons>
+            </OptionsMainContainer>
             <CompaniesContainer>
                 {PerPage.map((item,i)=>(
 
