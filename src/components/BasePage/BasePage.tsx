@@ -21,7 +21,7 @@ const Content = styled.div`
     background-color:${Colors.backgroundColor};
     padding: 20px; 
     display:flex;
-    
+
 `;
 
 type GetUsers = ReturnType<typeof getUsers>

@@ -1,9 +1,10 @@
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import styled from "styled-components";
 import { IState } from "../../reducers";
 import { IUsersReducer } from "../../reducers/usersReducers";
 import { IFotoReducer } from "../../reducers/fotoReducers";
 import { useSelector } from "react-redux";
+import { ICorrespondants } from "./CorrespondantsNotEdited";
 
 const CorrespondantContainer = styled.div`
 
@@ -38,8 +39,38 @@ const TopOneIcon = styled.div`
     height:20px;
   }
 `;
+const StyledSelect = styled.select`
+    &::-ms-expand{display:none}
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    text-overflow:"";
+    text-indent:1px;
+    //width:20%;
+    padding:5px;
+    background-color:#b3ecf3;
+    border-radius:5px;
+    color:#5e5ef7;
+    margin:0px 10px;
+    border-color:rgba(0,0,0,0);
+    
 
-export const Correspondants: FC=()=>{
+`;
+interface ICorrespondantsData{
+    data:ICorrespondants,
+    change: (a:ICorrespondants)=>void
+}
+
+export const Correspondants: FC<ICorrespondantsData>=(propsy)=>{
+
+    const [state, setState]= useState({
+        photo1: propsy.data.photo1,
+        name1: propsy.data.name1,
+        photo2:propsy.data.photo2,
+        name2:propsy.data.name2,
+        id1: 0,
+        id2:0,
+        
+    });
 
     const {
         fotoList,
@@ -50,15 +81,50 @@ export const Correspondants: FC=()=>{
           ...globalState.foto,
         })
       );
+    const setUser1=(event: React.ChangeEvent<HTMLSelectElement>)=>{
+        
+        setState({
+          ...state,
+          id1: Number(event.target.value),
+          name1: usersList?.find(a=> a.id === Number(event.target.value))?.name || propsy.data.name1,
+          photo1: fotoList?.find(b => b.id === (usersList?.find(a=> a.id === Number(event.target.value))?.id))?.url || propsy.data.photo1, 
+        })
+        
+    }
 
+    const setUser2=(event: React.ChangeEvent<HTMLSelectElement>)=>{
+        setState({
+          ...state,
+          id2: Number(event.target.value),
+          name2: usersList?.find(a=> a.id === Number(event.target.value))?.name || propsy.data.name2,
+          photo2: fotoList?.find(b => b.id === (usersList?.find(a=> a.id === Number(event.target.value))?.id))?.url || propsy.data.photo2,
+         
+        })
+    }
     return(
             <CorrespondantContainer>
                 <Correspondant>
-                    
-                    <img src={fotoList.find(a=>a.id === usersList[1]?.id)?.url} alt="Correspondant"/>
-                    <div>
-                        {usersList[1]?.name}
-                    </div>
+                    <img src={state.photo1} alt="Selected user"/>
+                    <StyledSelect onChange={setUser1}>
+                        <option label={state.name1}>
+                            {state.id1} 
+                        </option>
+                        <option label={usersList[0]?.name}>
+                            {usersList[0]?.id}   
+                        </option>
+                        <option label={usersList[1]?.name}>
+                            {usersList[1]?.id}   
+                        </option>
+                        <option label={usersList[2]?.name}>
+                            {usersList[2]?.id}    
+                        </option>
+                        <option label={usersList[3]?.name}>
+                            {usersList[3]?.id}    
+                        </option>
+                        <option label={usersList[4]?.name}>
+                            {usersList[4]?.id}    
+                        </option>
+                    </StyledSelect>
                     <div>
                         <TopOneIcon>
                             <img src="./icons/comments.png" alt="Message" />
@@ -73,11 +139,27 @@ export const Correspondants: FC=()=>{
                     </div>
                 </Correspondant>
                 <Correspondant>
-                    
-                    <img src={fotoList.find(a=>a.id === usersList[1]?.id)?.url} alt="Correspondant"/>
-                    <div>
-                        {usersList[1]?.name}
-                    </div>
+                    <img src={state.photo2} alt="Selected user"/>
+                    <StyledSelect onChange={setUser2}>
+                        <option label={state.name2}>
+                            {state.id2} 
+                        </option>
+                        <option label={usersList[5]?.name}>
+                            {usersList[5]?.id}   
+                        </option>
+                        <option label={usersList[1]?.name}>
+                            {usersList[1]?.id}   
+                        </option>
+                        <option label={usersList[6]?.name}>
+                            {usersList[6]?.id}    
+                        </option>
+                        <option label={usersList[7]?.name}>
+                            {usersList[7]?.id}    
+                        </option>
+                        <option label={usersList[8]?.name}>
+                            {usersList[8]?.id}    
+                        </option>
+                    </StyledSelect>
                     <div>
                         <TopOneIcon>
                             <img src="./icons/comments.png" alt="Message" />
@@ -91,6 +173,11 @@ export const Correspondants: FC=()=>{
                         <p>Profile</p>
                     </div>
                 </Correspondant>
+                <button onClick={
+                    ()=>{
+                      propsy.change(state);
+                    }
+                }>Click me</button>
             </CorrespondantContainer>
     )
 }

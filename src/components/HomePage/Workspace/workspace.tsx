@@ -180,6 +180,7 @@ const FollowMenu = styled.div`
     position:absolute;
     background-color:lightgray;
     text-align:center;
+    z-index:1;
     >div{
         padding:10px;
     }

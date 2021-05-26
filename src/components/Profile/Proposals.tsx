@@ -60,7 +60,7 @@ interface IDataProposal{
     data:IProposal,
     change: (a:IProposal)=>void
 }
-const StyledSelect = styled.select`
+export const StyledSelect = styled.select`
     &::-ms-expand{display:none}
     -webkit-appearance:none;
     -moz-appearance:none;
@@ -77,7 +77,7 @@ const StyledSelect = styled.select`
     
    
 `
-const StyledInput = styled.input`
+export const StyledInput = styled.input`
     padding: 5px 0px; 
     border-color:rgba(0,0,0,0);
     font-family:inherit;
@@ -221,7 +221,7 @@ export const Proposals: FC<IDataProposal>=(propsy)=>{
             <Title>
                 Proposals
             </Title>
-            <Table>
+                <Table>
                     <Header>
                         <HeaderElement>
                             Name
