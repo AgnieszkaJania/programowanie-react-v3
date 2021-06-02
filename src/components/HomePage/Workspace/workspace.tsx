@@ -80,10 +80,10 @@ const Article = styled.div`
     padding-top:5px;
     //background-color:green;
 `
-const ArticleImage = styled.div`
+const ArticleImage = styled.img`
     min-width: 60px;
     height: 60px;
-    background-image: url('./icons/skyscrapers.jpg');
+    
     
 `
 const TextContainer = styled.div`
@@ -236,7 +236,7 @@ export const Workspace: FC = () =>{
                                     <DateUserContainer>
                                         <p>7 jan. 2020</p>
                                     </DateUserContainer>
-                                    <PostUserPhoto src={fotoList[currentPost?.userId|| -1]?.url || ""} alt="User logo"/>
+                                    <PostUserPhoto src={fotoList.find(a=> a?.id === currentPost?.userId)?.url || ""} alt="User logo"/>
                                     <MainNameUserContainer>
                                         {usersList?.find(a => a?.id === currentPost?.userId)?.name || ""}
                                     </MainNameUserContainer>
@@ -252,10 +252,9 @@ export const Workspace: FC = () =>{
                         </TitleWrapper>
                     
 
-                            <ArticlesContainer>
-                                                    
+                            <ArticlesContainer>                   
                                 <Article>
-                                    <ArticleImage/>
+                                    <ArticleImage src={fotoList.find(a=> a?.id === currentPost?.userId)?.url || ""} alt="User photo"/>
                                     <TextContainer>
                                         <TitlePublicationContainer>
                                             {currentPost?.title}
@@ -264,7 +263,7 @@ export const Workspace: FC = () =>{
                                             <DateUserContainer>
                                                 <p>7 jan. 2020</p>
                                             </DateUserContainer>
-                                            <PostUserPhoto src={fotoList[currentPost?.userId || -1]?.url} alt="User logo"/>
+                                            <PostUserPhoto src={fotoList.find(a=> a?.id === currentPost?.userId)?.url || ""} alt="User logo"/>
                                             <NameUserContainer>
                                                 {usersList?.find(a => a?.id === currentPost?.userId)?.name || ""}
                                             </NameUserContainer>
@@ -274,7 +273,7 @@ export const Workspace: FC = () =>{
                                     </TextContainer>
                                 </Article>
                                 <Article>
-                                    <ArticleImage/>
+                                    <ArticleImage src={fotoList.find(a=> a?.id === currentPost?.userId)?.url || ""} alt="User photo"/>
                                     <TextContainer>
                                         <TitlePublicationContainer>
                                             {currentPost?.title || ""}
@@ -283,7 +282,7 @@ export const Workspace: FC = () =>{
                                             <DateUserContainer>
                                                 <p>7 jan. 2020</p>
                                             </DateUserContainer>
-                                            <PostUserPhoto src={fotoList[currentPost?.userId || -1].url} alt="User logo"/>
+                                            <PostUserPhoto src={fotoList.find(a=> a?.id === currentPost?.userId)?.url || ""} alt="User logo"/>
                                             <NameUserContainer>
                                                 {usersList?.find(a => a?.id === currentPost?.userId)?.name || ""}
                                             </NameUserContainer>
@@ -293,7 +292,7 @@ export const Workspace: FC = () =>{
                                     </TextContainer>
                                 </Article>
                                 <Article>
-                                    <ArticleImage/>
+                                    <ArticleImage src={fotoList.find(a=> a?.id === currentPost?.userId)?.url || ""} alt="User photo"/>
                                     <TextContainer>
                                         <TitlePublicationContainer>
                                             {currentPost?.title || ""}
@@ -302,7 +301,7 @@ export const Workspace: FC = () =>{
                                             <DateUserContainer>
                                                 <p>7 jan. 2020</p>
                                             </DateUserContainer>
-                                            <PostUserPhoto src={fotoList[currentPost?.userId || -1]?.url || ""} alt="User logo"/>
+                                            <PostUserPhoto src={fotoList.find(a=> a?.id === currentPost?.userId)?.url || ""} alt="User logo"/>
                                             <NameUserContainer>
                                                 {usersList?.find(a => a?.id === currentPost?.userId)?.name || ""}
                                             </NameUserContainer>

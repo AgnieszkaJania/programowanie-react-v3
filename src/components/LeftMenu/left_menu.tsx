@@ -115,6 +115,7 @@ export const LeftMenu: FC = () =>{
             {console.log(fotoList)}
             {usersList.length > 0 && fotoList.length > 0 && 
                 <ProfileInfo>
+                    <BetterLink to="/profile">
                     <UpperProfile>
                         <ProfileElements>
                             <UserPhoto src={fotoList.find(a=>a.id === currentUser?.id)?.url || ""} alt="Logo" />
@@ -130,6 +131,7 @@ export const LeftMenu: FC = () =>{
                             </UserDesc>
                         </ProfileElements>
                     </UpperProfile>
+                    </BetterLink>
                     <LowerProfile>
                         <UserOptions>
                             <div>

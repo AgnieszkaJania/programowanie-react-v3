@@ -237,18 +237,20 @@ export const ExpandedMenu: FC =()=>{
                             </Cateories>
                         </MenuItem>
                     }
-                    <MenuItem>
-                        <MenuPhoto src={fotoList.find(x=>x.id === currentUser?.id)?.url || ""} alt="Logo"/> 
-                        <Cateories>
-                            {usersList[0].name}
-                            <div>
-                                <BetterLink to="/profile">
-                                    See profile
-                                </BetterLink>
-                            </div>
-                        </Cateories>
-                        
-                    </MenuItem>
+                    {currentUser?.name.toLowerCase().includes(inputText.toLowerCase()) &&
+                        <MenuItem>
+                            <MenuPhoto src={fotoList.find(x=>x.id === currentUser?.id)?.url || ""} alt="Logo"/> 
+                            <Cateories>
+                                {currentUser?.name}
+                                <div>
+                                    <BetterLink to="/profile">
+                                        See profile
+                                    </BetterLink>
+                                </div>
+                            </Cateories>
+                        </MenuItem>
+                    }
+                    
 
                 </CategoryWrapper>
             }

@@ -1,6 +1,9 @@
 import React, { FC, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { SetData, setData } from '../../actions/topMenuItem';
+import { IState } from '../../reducers';
+import { ITopMenuReducer } from '../../reducers/topMenuItems';
+import { WorkspaceSolo } from '../WorkspaceSolo/workspaceSolo';
 
 
 
@@ -10,8 +13,15 @@ export const Corporate: FC = () =>{
     useEffect(()=>{
         dispatch<SetData>(setData("Corporate", "./icons/entities.png"))
     });
-    return(<>
-               Corporate</>
+    const {
+        data
+      } = useSelector<IState, ITopMenuReducer>(
+        (globalState) => ({
+          ...globalState.data
+        })
+      );
+    return(
+        <WorkspaceSolo image={(data?.icon || "house.png")} name={data?.name || ""}/>
     );
       
 };

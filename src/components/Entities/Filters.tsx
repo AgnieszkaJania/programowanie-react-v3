@@ -1,6 +1,4 @@
-import React, { FC, useEffect, useState } from "react";
-import useDropdown from "react-dropdown-hook";
-import { useDispatch, useSelector } from "react-redux";
+import React, { FC} from "react";
 import styled from "styled-components";
 import { Colors } from "../../styledHelpers/Colors";
 

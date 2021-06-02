@@ -13,6 +13,7 @@ import { Corporate } from './components/Corporate/Corporate';
 import { GroupNorms } from './components/groupNorms/groupNorms';
 import { RealEstateContracts } from './components/RealEstateContracts/RealEstateContracts';
 import { Profile } from './components/Profile/profile';
+import {WorkspaceSolo} from './components/WorkspaceSolo/workspaceSolo';
 import BasePage from './components/BasePage/BasePage';
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
             <Route path="/Corporate" component={Corporate}/>
             <Route path="/GroupNorms" component={GroupNorms}/>
             <Route path="/RealEstateContracts" component={RealEstateContracts}/>
+            <Route path="/WorkspaceSolo" component={WorkspaceSolo}/>
             <Route path="/profile" exact component={Profile}/>
           </Switch>
     </BasePage>

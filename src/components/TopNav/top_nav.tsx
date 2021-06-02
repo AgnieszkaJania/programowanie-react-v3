@@ -7,6 +7,7 @@ import { ExpandedMenu } from "../TopNav/ExpandedMenu";
 import { ITopMenuReducer } from "../../reducers/topMenuItems";
 import { IState } from "../../reducers";
 import { useSelector } from "react-redux";
+import { BetterLink } from "../../styledHelpers/betterLinks";
 
 const InnerWrapper = styled.div`
   width: 100%;
@@ -129,7 +130,9 @@ export const TopNav: FC = () => {
       <InnerWrapper>
         <LefIcons>
           <RoundImage>
+            <BetterLink to="/">
             <img src="./icons/house2.svg" alt="House" />
+            </BetterLink>
           </RoundImage>
 
           <WrapRefWrapper ref={wrapperRef}>

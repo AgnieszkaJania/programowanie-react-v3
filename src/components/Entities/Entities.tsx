@@ -22,7 +22,7 @@ const EntitiesWrapper = styled.div`
   display: flex;
   flex-direction: column;
   padding: 10px;
-  width:500cm;
+  width:70%;
 `;
 const CompaniesContainer = styled.div`
   display: flex;
