@@ -103,6 +103,7 @@ export const Expertise: FC<IData2> = (propsy) => {
                         <option>Other acquisitions</option>
                         <option>Wide cooperation</option>
                         <option>Invade company</option>
+                        <option>Mergers and acquisitions</option>
                     </StyledSelect>
                     
                </ChosenCategories>
@@ -117,6 +118,7 @@ export const Expertise: FC<IData2> = (propsy) => {
                             <option>International operations</option>
                             <option>Other operations</option>
                             <option>International cooperation</option>
+                            <option>Cross border operation</option>
                     </StyledSelect>
                     <StyledSelect onChange={setSpecialities2}>
                             <option>{state.specialities2}</option>
@@ -124,6 +126,7 @@ export const Expertise: FC<IData2> = (propsy) => {
                             <option>Transaction over 50000M$/€</option>
                             <option>Transaction over 100000M$/€</option>
                             <option>Transaction over 1000000M$/€</option>
+                            <option>Transaction over 500M$/€</option>
                     </StyledSelect>
                </ChosenCategories>
                 <Title>
@@ -136,6 +139,7 @@ export const Expertise: FC<IData2> = (propsy) => {
                             <option>Warsaw bar association</option>
                             <option>Stockholm bar association</option>
                             <option>London bar association</option>
+                            <option>Paris bar association</option>
                         </StyledSelect>
                         <StyledSelect onChange={setAdmission2}>
                             <option>{state.admission2}</option>
@@ -143,6 +147,7 @@ export const Expertise: FC<IData2> = (propsy) => {
                             <option>British bar association</option>
                             <option>American bar association</option>
                             <option>Thai bar association</option>
+                            <option>Tunisisan bar association</option>
                         </StyledSelect>
                     </ChosenCategories>
                 <Title>
@@ -155,6 +160,7 @@ export const Expertise: FC<IData2> = (propsy) => {
                             <option>Sweden</option>
                             <option>Germany</option>
                             <option>Spain</option>
+                            <option>Tunisia</option>
                         </StyledSelect>
                     </ChosenCategories>
                     <img src="./icons/floppy-disk.png" alt="Save" onClick={()=>{
