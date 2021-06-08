@@ -43,11 +43,17 @@ const ProfileContainer = styled.div`
   width:90%;
   display:flex;
   justify-content:space-between;
-  /* background-color:pink; */
+  position:relative;
   border-bottom:1px solid grey;
   
 `
-
+const SaveIcon = styled.img`
+      position:absolute;
+      right:0;
+      bottom:100px;
+      width:40px;
+      height:40px;
+`
 
 interface IData{
   data: IProfileUserData,
@@ -124,11 +130,11 @@ export const EditProfileUserData: FC<IData> = (p) => {
                 <input type="text" value={state.phone} onChange={setPhone} ></input>
                 <input type="text" value={state.email} onChange={setEmail}></input>
           </ContactProfileImfo>
-          <button onClick={
+          <SaveIcon src="./icons/floppy-disk.png" alt="Save" onClick={
             ()=>{
               p.change(state);
             }
-          }>Click me</button>
+          }/>
         </ProfileContainer>
     )
 

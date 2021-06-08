@@ -27,7 +27,7 @@ const EntitiesWrapper = styled.div`
 const CompaniesContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  background-color: yellow;
+  /* background-color: yellow; */
   
   
 `;
@@ -52,7 +52,7 @@ const CompaniesContainerExpanded = styled.div`
     display: flex;
     justify-content:center;
     flex-wrap: wrap;
-    background-color: yellow;
+    background-color: white;
     height:70%;
     overflow:scroll;
 `

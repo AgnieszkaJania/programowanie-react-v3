@@ -8,7 +8,6 @@ import { BetterLink } from '../../../styledHelpers/betterLinks';
 const SliderWrapper = styled.div`
     width:100%;
     /* background-color:blue; */
-
 `
 const CustomSlider = styled(Slider)`
     display:flex;
@@ -48,12 +47,10 @@ const SliderElement = styled.div`
     background-color:${Colors.white};
     border-radius: 3px;
     position:relative;
-    /* margin: 0 30px; */
    
-
+   
     
     
-
 `
 const Picture = styled.div`
     background-image: url('./icons/skyscrapers.jpg');
@@ -74,7 +71,6 @@ const BigIcon = styled.div`
     align-items:center;
     width:30%;
     height:40%;
-
 `
 const Title = styled.div`
     color:${Colors.black};
@@ -89,7 +85,6 @@ const Icon = styled.img`
     /* background-image: url('./icons/skyscrapers.jpg'); */
     width:40%;
     height:40%;
-
 `
 const SliderFooter = styled.div`
     display:flex;
@@ -129,20 +124,23 @@ export const SliderContainer: FC = () =>{
         dots:false,
         infinite:true,
         speed:500,
-        slidesToShow: 3.5,
-        slidesToScroll: 1
+        slidesToShow: 3.8,
+        slidesToScroll: 2
     }
 
     return(
         <SliderWrapper>
             <CustomSlider {...settings}>
                 <div>
-                    <BetterLink to="/clientContract">
+                
                         <SliderElement>
+                        
                             <Picture/>
+                            <BetterLink to="/clientContract">   
                             <BigIcon>
                                 <Icon src="./icons/administration.png" alt="Administration"/> 
                             </BigIcon>
+                            </BetterLink>
                             <Title>Client contract</Title>
                             <SliderFooter>
                                 <TitleUsers>
@@ -157,14 +155,16 @@ export const SliderContainer: FC = () =>{
                                 </LastUpdated>
                             </SliderFooter>
                         </SliderElement>
-                    </BetterLink>
+                
                 </div>
                 <div>
                     <SliderElement>
                         <Picture/>
+                        <BetterLink to="/supplierContract">
                         <BigIcon>
                             <Icon src="./icons/administration.png" alt="Administration"/> 
                         </BigIcon>
+                        </BetterLink>
                         <Title>Supplier contract</Title>
                         <SliderFooter>
                             <TitleUsers>
@@ -183,9 +183,11 @@ export const SliderContainer: FC = () =>{
                 <div>
                     <SliderElement>
                         <Picture/>
+                        <BetterLink to="/corporate">
                         <BigIcon>
                             <Icon src="./icons/entities.png" alt="Entities"/> 
                         </BigIcon>
+                        </BetterLink>
                         <Title>Corporate</Title>
                         <SliderFooter>
                             <TitleUsers>
@@ -204,9 +206,11 @@ export const SliderContainer: FC = () =>{
                 <div>
                     <SliderElement>
                         <Picture/>
+                        <BetterLink to="/groupNorms">
                         <BigIcon>
                             <Icon src="./icons/administration.png" alt="Administration"/> 
                         </BigIcon>
+                        </BetterLink>
                         <Title>Group norms</Title>
                         <SliderFooter>
                             <TitleUsers>
@@ -226,9 +230,11 @@ export const SliderContainer: FC = () =>{
                 <div>
                     <SliderElement>
                         <Picture/>
+                        <BetterLink to="/realEstateContracts">
                         <BigIcon>
                             <Icon src="./icons/administration.png" alt="Administration"/> 
                         </BigIcon>
+                        </BetterLink>
                         <Title>Real estate contracts</Title>
                         <SliderFooter>
                             <TitleUsers>
@@ -237,6 +243,121 @@ export const SliderContainer: FC = () =>{
                                 <Dot src="./icons/black-circle.png" alt="Dot" />
                                 <img src="./icons/people.png" alt="People"/>
                                 <p> 25 users</p>
+                            </TitleUsers>
+                            <LastUpdated>
+                                <p>Last update 2 days ago</p>
+                            </LastUpdated>
+                        </SliderFooter>
+                    </SliderElement>      
+                </div>
+                <div>
+                    <SliderElement>
+                        <Picture/>
+                        <BetterLink to="/">
+                        <BigIcon>
+                            <Icon src="./icons/house.png" alt="Home"/> 
+                        </BigIcon>
+                        </BetterLink>
+                        <Title>Home</Title>
+                        <SliderFooter>
+                            <TitleUsers>
+                                <img src="./icons/house.png" alt="Home"/>
+                                <p>Home</p>
+                                <Dot src="./icons/black-circle.png" alt="Dot" />
+                                <img src="./icons/people.png" alt="People"/>
+                                <p> 25 users</p>
+                            </TitleUsers>
+                            <LastUpdated>
+                                <p>Last update 2 days ago</p>
+                            </LastUpdated>
+                        </SliderFooter>
+                    </SliderElement>      
+                </div>
+                <div>
+                    <SliderElement>
+                        <Picture/>
+                        <BetterLink to="/publications">
+                        <BigIcon>
+                            <Icon src="./icons/publications.png" alt="Publications"/> 
+                        </BigIcon>
+                        </BetterLink>
+                        <Title>Publications</Title>
+                        <SliderFooter>
+                            <TitleUsers>
+                                <img src="./icons/publications.png" alt="Publications"/>
+                                <p>Publ.</p>
+                                <Dot src="./icons/black-circle.png" alt="Dot" />
+                                <img src="./icons/people.png" alt="People"/>
+                                <p> 25 users</p>
+                            </TitleUsers>
+                            <LastUpdated>
+                                <p>Last update 2 days ago</p>
+                            </LastUpdated>
+                        </SliderFooter>
+                    </SliderElement>      
+                </div>
+                <div>
+                    <SliderElement>
+                        <Picture/>
+                        <BetterLink to="/people">
+                        <BigIcon>
+                            <Icon src="./icons/administration.png" alt="Administration"/> 
+                        </BigIcon>
+                        </BetterLink>
+                        <Title>People</Title>
+                        <SliderFooter>
+                            <TitleUsers>
+                                <img src="./icons/administration.png" alt="Administration"/>
+                                <p>People</p>
+                                <Dot src="./icons/black-circle.png" alt="Dot" />
+                                <img src="./icons/people.png" alt="People"/>
+                                <p> 30 users</p>
+                            </TitleUsers>
+                            <LastUpdated>
+                                <p>Last update 2 days ago</p>
+                            </LastUpdated>
+                        </SliderFooter>
+                    </SliderElement>      
+                </div>
+                <div>
+                    <SliderElement>
+                        <Picture/>
+                        <BetterLink to="/entities">
+                        <BigIcon>
+                            <Icon src="./icons/entities.png" alt="Entities"/> 
+                        </BigIcon>
+                        </BetterLink>
+                        <Title>Entities</Title>
+                        <SliderFooter>
+                            <TitleUsers>
+                                <img src="./icons/entities.png" alt="Entities"/>
+                                <p>Entities</p>
+                                <Dot src="./icons/black-circle.png" alt="Dot" />
+                                <img src="./icons/people.png" alt="People"/>
+                                <p> 30 users</p>
+                            </TitleUsers>
+                            <LastUpdated>
+                                <p>Last update 2 days ago</p>
+                            </LastUpdated>
+                        </SliderFooter>
+                    </SliderElement>      
+                </div>
+                <div>
+                    <SliderElement>
+                        <Picture/>
+                        <BetterLink to="administration">
+                        <BigIcon>
+                            <Icon src="./icons/administration.png" alt="Administration"/> 
+                        </BigIcon>
+                        </BetterLink>
+                        <Title>Administration</Title>
+                        <SliderFooter>
+                            <TitleUsers>
+                                <img src="./icons/administration.png" alt="Administration"/>
+                                <p>Contract</p>
+                                <Dot src="./icons/black-circle.png" alt="Dot" />
+                                <img src="./icons/people.png" alt="People"/>
+                                <p> 150 users</p>
                             </TitleUsers>
                             <LastUpdated>
                                 <p>Last update 2 days ago</p>

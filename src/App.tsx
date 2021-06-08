@@ -15,6 +15,9 @@ import { RealEstateContracts } from './components/RealEstateContracts/RealEstate
 import { Profile } from './components/Profile/profile';
 import {WorkspaceSolo} from './components/WorkspaceSolo/workspaceSolo';
 import BasePage from './components/BasePage/BasePage';
+import { Settings } from './components/Settings/settings';
+import { Privacy } from './components/Settings/privacy';
+import { Logout } from './components/Settings/logout';
 
 function App() {
   return (
@@ -34,6 +37,9 @@ function App() {
             <Route path="/GroupNorms" component={GroupNorms}/>
             <Route path="/RealEstateContracts" component={RealEstateContracts}/>
             <Route path="/WorkspaceSolo" component={WorkspaceSolo}/>
+            <Route path="/Settings" component={Settings}/>
+            <Route path="/Privacy" component={Privacy}/>
+            <Route path="/Logout" component={Logout}/>
             <Route path="/profile" exact component={Profile}/>
           </Switch>
     </BasePage>

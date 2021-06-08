@@ -52,7 +52,6 @@ const LogoutWrapper = styled.div`
     justify-content:center;
     padding:5px;
     border-top: 1px solid grey;
-    background-color:red;
 `
 const MenuPhoto = styled.img`
     width:20%;
@@ -218,24 +217,28 @@ export const ExpandedMenu: FC =()=>{
                     
                     <CategoryLabel>Account</CategoryLabel>
                     {'Settings'.toLowerCase().includes(inputText.toLowerCase()) &&
-                        <MenuItem>
-                            <OtherIcons>
-                                <img src="./icons/settings.png" alt="Settings"/>  
-                            </OtherIcons>
-                            <Cateories>
-                                Settings     
-                            </Cateories>
-                        </MenuItem>
+                        <BetterLink to="/Settings">
+                            <MenuItem>
+                                <OtherIcons>
+                                    <img src="./icons/settings.png" alt="Settings"/>  
+                                </OtherIcons>
+                                <Cateories>
+                                    Settings     
+                                </Cateories>
+                            </MenuItem>
+                        </BetterLink>
                     }
                     {'Privacy'.toLowerCase().includes(inputText.toLowerCase()) &&
-                        <MenuItem>
-                            <OtherIcons>
-                                <img src="./icons/privacy.png" alt="Privacy"/>   
-                            </OtherIcons>
-                            <Cateories>
-                                Privacy     
-                            </Cateories>
-                        </MenuItem>
+                        <BetterLink to="/Privacy">
+                            <MenuItem>
+                                <OtherIcons>
+                                    <img src="./icons/privacy.png" alt="Privacy"/>   
+                                </OtherIcons>
+                                <Cateories>
+                                    Privacy     
+                                </Cateories>
+                            </MenuItem>
+                        </BetterLink>
                     }
                     {currentUser?.name.toLowerCase().includes(inputText.toLowerCase()) &&
                         <MenuItem>
@@ -255,14 +258,16 @@ export const ExpandedMenu: FC =()=>{
                 </CategoryWrapper>
             }
             <CategoryWrapper>
-                <LogoutWrapper>
-                    <div>
-                        <img src="./icons/logout.png" alt="logout"/> 
-                    </div>
-                    <LogoutTitle>
-                        Logout
-                    </LogoutTitle>
-                </LogoutWrapper>
+                <BetterLink to="/Logout">
+                    <LogoutWrapper>
+                        <div>
+                            <img src="./icons/logout.png" alt="logout"/> 
+                        </div>
+                        <LogoutTitle>
+                            Logout
+                        </LogoutTitle>
+                    </LogoutWrapper>
+                </BetterLink>
             </CategoryWrapper>
 
         </ExMenuWrapper>

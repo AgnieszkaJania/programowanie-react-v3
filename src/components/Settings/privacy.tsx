@@ -8,11 +8,12 @@ import { GeneralWrapper, MainBoardWrapper } from '../../styledHelpers/Components
 
 
 
-export const People: FC = () =>{
+
+export const Privacy: FC = () =>{
     const dispatch = useDispatch();
     useEffect(()=>{
-        dispatch<SetData>(setData("People", "./icons/people.png"))
-    });
+        dispatch<SetData>(setData("Privacy", "./icons/privacy.png"))
+    },[]);
     const {
         data
       } = useSelector<IState, ITopMenuReducer>(
@@ -21,9 +22,9 @@ export const People: FC = () =>{
         })
       );
     return(
-      <MainBoardWrapper>
-        <GeneralWrapper>{data?.name}</GeneralWrapper>
-      </MainBoardWrapper>
+        <MainBoardWrapper>
+          <GeneralWrapper>{data?.name}</GeneralWrapper>
+        </MainBoardWrapper>
     );
       
 };

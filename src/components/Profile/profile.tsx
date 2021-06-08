@@ -127,6 +127,7 @@ export const Profile: FC = () => {
       info3:"Terms and conditions",
       info4:"Monthly 10k€ retainer - see with Jenny Smith",
       info5:"Corporate M&A and international acquisitions",
+      infoFile:"Nie wybrano pliku",
     },
     proposalData:{
               name1:"Operation Time",
@@ -350,7 +351,7 @@ export const Profile: FC = () => {
         <CustomContainer>
           {!state.editable2 &&
             <PanelInformationsNotE info1={state.panelInfo.info1} info2={state.panelInfo.info2} info3={state.panelInfo.info3}
-            info4={state.panelInfo.info4} info5={state.panelInfo.info5}
+            info4={state.panelInfo.info4} info5={state.panelInfo.info5} infoFile={state.panelInfo.infoFile}
             />
           }
           {state.editable2 &&

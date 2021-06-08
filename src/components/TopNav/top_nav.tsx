@@ -87,9 +87,11 @@ const TopNavImage = styled.div`
   width:35px;
   display:flex;
   align-items:center;
-  >img{
+  padding:3px;
+  img{
     max-width:35px;
     border-radius:50px;
+    
   }
 `
 const BackgroundImageDiv = styled.div`
@@ -139,7 +141,9 @@ export const TopNav: FC = () => {
             <SelectOption onClick={menuHandler}>
               <ChosenItem>
                 <TopNavImage>
+                  
                   <img src={(data?.icon || "house.png")} alt="House" />
+                  
                 </TopNavImage>
                 <Cateories>{data?.name || ""}</Cateories>
               </ChosenItem>

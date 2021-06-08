@@ -66,12 +66,12 @@ const SmallIcon = styled.img`
   
 `
 
-interface ICostam {
+interface IResume {
   filter: string,
   zmienna: boolean
 }
 
-export const ResumeYourWorkContainer: FC<ICostam> = (props) => {
+export const ResumeYourWorkContainer: FC<IResume> = (props) => {
   const { commentList, currentUser, postList, usersList  } = useSelector<IState, ICommentReducer & IUsersReducer & IPostReducer>(
     (globalState) => ({
       ...globalState.users,

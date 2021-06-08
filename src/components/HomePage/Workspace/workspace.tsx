@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FC, useState } from 'react';
+import React, { FC, useState } from 'react';
 import styled from 'styled-components';
 import { useSelector } from 'react-redux';
 import { IPostReducer } from '../../../reducers/postReducers';

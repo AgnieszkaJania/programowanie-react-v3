@@ -53,7 +53,8 @@ export interface IPanelInformations{
     info2: string,
     info3:string,
     info4:string,
-    info5:string
+    info5:string,
+    infoFile:string,
 }
 
 export const PanelInformationsNotE: FC<IPanelInformations>=(props)=>{
@@ -77,7 +78,8 @@ export const PanelInformationsNotE: FC<IPanelInformations>=(props)=>{
             </Paragraf>
             <ButtonWrap/>
                 <NewButton>
-                <InputFile type="file"/>
+                {/* <InputFile type="file"/> */}
+                {props.infoFile}
                 </NewButton> 
             <Title>
                 Services and projects

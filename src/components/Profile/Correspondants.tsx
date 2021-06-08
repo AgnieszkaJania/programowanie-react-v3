@@ -7,7 +7,14 @@ import { useSelector } from "react-redux";
 import { ICorrespondants } from "./CorrespondantsNotEdited";
 
 const CorrespondantContainer = styled.div`
-
+    position:relative;
+`
+const SaveIcon = styled.img`
+      position:absolute;
+      right:0;
+      bottom:100px;
+      width:40px;
+      height:40px;
 `
 
 const Correspondant = styled.div`
@@ -173,11 +180,11 @@ export const Correspondants: FC<ICorrespondantsData>=(propsy)=>{
                         <p>Profile</p>
                     </div>
                 </Correspondant>
-                <button onClick={
+                <SaveIcon src="./icons/floppy-disk.png" alt="Save"  onClick={
                     ()=>{
                       propsy.change(state);
                     }
-                }>Click me</button>
+                }/>
             </CorrespondantContainer>
     )
 }

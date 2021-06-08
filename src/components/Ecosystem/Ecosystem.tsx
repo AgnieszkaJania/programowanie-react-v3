@@ -1,12 +1,9 @@
 import React, { FC, useEffect } from 'react';
-import styled from 'styled-components';
-import { Colors } from '../../styledHelpers/Colors';
 import { IState } from '../../reducers';
 import { useDispatch, useSelector } from 'react-redux';
 import { ITopMenuReducer } from '../../reducers/topMenuItems';
-import { WorkspaceSolo } from '../WorkspaceSolo/workspaceSolo';
 import { setData, SetData } from '../../actions/topMenuItem';
-
+import { GeneralWrapper, MainBoardWrapper } from '../../styledHelpers/Components';
 
 
 
@@ -23,7 +20,9 @@ export const Ecosystem: FC = () =>{
         })
       );
     return(
-        <WorkspaceSolo image={(data?.icon || "house.png")} name={data?.name || ""}/>
+      <MainBoardWrapper>
+        <GeneralWrapper>{data?.name}</GeneralWrapper>
+      </MainBoardWrapper>
     );
       
       

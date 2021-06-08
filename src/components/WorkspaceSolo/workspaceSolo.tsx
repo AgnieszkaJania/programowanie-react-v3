@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import { Colors } from "../../styledHelpers/Colors";
 import { ResumeYourWorkContainer } from '../HomePage/Workspace/resumeYourWorkContainer';
+import { ColorfulTile } from "./colorfulTile";
 import { Tile } from "./Tile";
 export const MainBoardWrapper = styled.div`
     display:flex;
@@ -146,9 +147,18 @@ const MainWrapper = styled.div`
 `
 const TilesContainer=styled.div`
     display:flex;
+    background-color:#b6b1b1;
+    border: 2px outset gray;
+    border-radius:5px;
+    padding:15px 5px;
+    margin: 20px 0px;
+    
 `
 const Icon = styled.div`
 
+`
+const ColorfulTileContainer = styled.div`
+    display:flex;
 `
 interface IWorkspaceSolo{
     image: string;
@@ -191,6 +201,17 @@ export const WorkspaceSolo: FC<IWorkspaceSolo> = (props) => {
             <SettingsImg src="./icons/cog.png" alt="Settings"/>
            </TopContentWrapper>
            </TopWrapper>
+           <TilesContainer>
+                <Tile title="Explore your " title2= "entities" 
+                desc="Take a few minutes to look ath the most important elements and specificities of your entities." 
+                photo="./icons/entities.png" alt="Corporate"/>
+                <Tile title="Structure the " title2= "ownership" 
+                desc="Get a clear view of the ownership by looking at the relations between individuals and entities." 
+                photo="./icons/diagram.png" alt="Diagram"/>
+                <Tile title="Define the " title2= "calendar" 
+                desc="Prepare future events by creating detailed plans around the life of your entity." 
+                photo="./icons/848143.png" alt="Calendar"/>
+            </TilesContainer>
            <ResumeYourWork>
                 <SectionTitleWrapper>
                     <p>Latest updates</p>
@@ -214,10 +235,18 @@ export const WorkspaceSolo: FC<IWorkspaceSolo> = (props) => {
                                 </FollowMenu>}
                             </FollowWrapper>
                             
-                        </RightIcons>
-                        <Tile title="title" desc="desc" photo="photo"/>
-                        
+                        </RightIcons>    
                 </SectionTitleWrapper>
+                <ColorfulTileContainer>
+                    <ColorfulTile title="All" icon="./icons/entities.png" color="lightblue" textColor="darkblue" bold={true}/>
+                    <ColorfulTile title="SAS" icon="./icons/entities.png" color="lightgreen" textColor="green" bold={false}/>     
+                    <ColorfulTile title="SARL" icon="./icons/entities.png" color="lightblue" textColor="blue" bold={false}/>     
+                    <ColorfulTile title="Secondary business" icon="./icons/entities.png" color="lightyellow" textColor="gold" bold={false}/>     
+                    <ColorfulTile title="Communities" icon="./icons/diagram.png" color="lightgray" textColor="gray" bold={false}/>     
+                    <ColorfulTile title="POA" icon="./icons/house.png" color="lavender" textColor="gray" bold={false}/>     
+                    <ColorfulTile title="Survey" icon="./icons/administration.png" color="white" textColor="gray" bold={false}/>     
+                    <ColorfulTile title="..." icon="./icons/entities.png" color="white" textColor="gray" bold={true}/>     
+                </ColorfulTileContainer>
                 <ResumeYourWorkContainer filter={state.inputText} zmienna={state.filter}/>
             </ResumeYourWork>
         </MainBoardWrapper>

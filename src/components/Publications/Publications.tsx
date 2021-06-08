@@ -3,7 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { SetData, setData } from '../../actions/topMenuItem';
 import { IState } from '../../reducers';
 import { ITopMenuReducer } from '../../reducers/topMenuItems';
-import { WorkspaceSolo } from '../WorkspaceSolo/workspaceSolo';
+import { GeneralWrapper, MainBoardWrapper } from '../../styledHelpers/Components';
+
 
 
 
@@ -21,7 +22,9 @@ export const Publications: FC = () =>{
         })
       );
     return(
-        <WorkspaceSolo image={(data?.icon || "house.png")} name={data?.name || ""}/>
+        <MainBoardWrapper>
+          <GeneralWrapper>{data?.name}</GeneralWrapper>
+        </MainBoardWrapper>
     );
       
 };

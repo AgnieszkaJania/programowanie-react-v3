@@ -69,6 +69,7 @@ export const PanelInformations: FC<IDataPanel>=(propsy)=>{
         info3:propsy.data.info3,
         info4:propsy.data.info4,
         info5:propsy.data.info5,
+        infoFile:propsy.data.infoFile,
     })
     const setInfo1=(event: React.ChangeEvent<HTMLInputElement>)=>{
         setState({
@@ -100,6 +101,12 @@ export const PanelInformations: FC<IDataPanel>=(propsy)=>{
           info5: event.target.value
         })
     }
+    const setInfoFile=(event: React.ChangeEvent<HTMLInputElement>)=>{
+        setState({
+          ...state,
+          infoFile: event.target.value
+        })
+    }
     return(
         <PanleInfoContainer>
             <Title>
@@ -119,7 +126,7 @@ export const PanelInformations: FC<IDataPanel>=(propsy)=>{
             </Paragraf>
             <ButtonWrap/>
                 <NewButton>
-                <InputFile type="file"/>
+                <InputFile type="file"  onChange={setInfoFile}/>
                 </NewButton> 
             <Title>
                 Services and projects
