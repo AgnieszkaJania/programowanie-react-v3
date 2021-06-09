@@ -24,7 +24,6 @@ const InnerWrapper = styled.div`
 const RightIcons = styled.div`
   display: flex;
   align-items: center;
-  //background-color:green;
   justify-content: space-around;
   width: 10%;
 `;
@@ -56,20 +55,18 @@ const LefIcons = styled.div`
   display: flex;
   align-items: center;
   width: 25%;
-  //background-color:green;
   justify-content: space-around;
 `;
 export const Cateories = styled.div`
   margin-left: 5px;
   text-decoration:none;
-  //background-color:red;
   width:80%;
   
 `;
 
 const WrapRefWrapper = styled.div`
   width: 60%;
-  background-color:grey;
+  //background-color:grey;
   position: relative;
 `;
 
@@ -81,17 +78,16 @@ const ChosenItem = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  //background-color:yellow;
 `;
 const TopNavImage = styled.div`
   width:35px;
   display:flex;
   align-items:center;
   padding:3px;
+  
   img{
     max-width:35px;
-    border-radius:50px;
-    
+    border-radius:20px;
   }
 `
 const BackgroundImageDiv = styled.div`

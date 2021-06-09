@@ -223,6 +223,7 @@ export const InternalRewiews: FC<IDataInternalRewiews>=(propsy)=>{
                                 <option>Cooperation Time</option>
                                 <option>Other Time</option>
                                 <option>Gathering Time</option>
+                                <option>Operation Time</option>
                             </StyledSelect>
                         </RowElement>
                         <RowElement>
@@ -232,6 +233,7 @@ export const InternalRewiews: FC<IDataInternalRewiews>=(propsy)=>{
                                 <option>Toyota TTT</option>
                                 <option>Nissan TTT</option>
                                 <option>Fiat TTT</option>
+                                <option>Renault TTT</option>
                             </StyledSelect>
                         </RowElement>
                         <RowElement>
@@ -248,6 +250,7 @@ export const InternalRewiews: FC<IDataInternalRewiews>=(propsy)=>{
                                 <option>
                                     Finalnd
                                 </option>
+                                <option>France</option>
                             </StyledSelect>
                         </RowElement>
                         <RowElement>
@@ -267,6 +270,7 @@ export const InternalRewiews: FC<IDataInternalRewiews>=(propsy)=>{
                                 <option>
                                     #Economy
                                 </option>
+                                <option>#Tax</option>
                             </StyledSelect>
                         </RowElement>
                         <RowElement>
@@ -282,6 +286,7 @@ export const InternalRewiews: FC<IDataInternalRewiews>=(propsy)=>{
                                 <option>Cooperation Time</option>
                                 <option>Other Time</option>
                                 <option>Gathering Time</option>
+                                <option>Operation Time</option>
                             </StyledSelect>
                         </RowElement>
                         <RowElement>
@@ -291,6 +296,7 @@ export const InternalRewiews: FC<IDataInternalRewiews>=(propsy)=>{
                                 <option>Toyota TTT</option>
                                 <option>Nissan TTT</option>
                                 <option>Fiat TTT</option>
+                                <option>Renault TTT</option>
                             </StyledSelect>
                         </RowElement>
                         <RowElement>
@@ -307,6 +313,7 @@ export const InternalRewiews: FC<IDataInternalRewiews>=(propsy)=>{
                                 <option>
                                     Finalnd
                                 </option>
+                                <option>France</option>
                             </StyledSelect>
                         </RowElement>
                         <RowElement>
@@ -326,6 +333,7 @@ export const InternalRewiews: FC<IDataInternalRewiews>=(propsy)=>{
                                 <option>
                                     #Economy
                                 </option>
+                                <option>#Tax</option>
                             </StyledSelect>
                         </RowElement>
                         <RowElement>
@@ -341,6 +349,7 @@ export const InternalRewiews: FC<IDataInternalRewiews>=(propsy)=>{
                                 <option>Cooperation Time</option>
                                 <option>Other Time</option>
                                 <option>Gathering Time</option>
+                                <option>Operation Time</option>
                             </StyledSelect>
                         </RowElement>
                         <RowElement>
@@ -350,6 +359,7 @@ export const InternalRewiews: FC<IDataInternalRewiews>=(propsy)=>{
                                 <option>Toyota TTT</option>
                                 <option>Nissan TTT</option>
                                 <option>Fiat TTT</option>
+                                <option>Renault TTT</option>
                             </StyledSelect>
                         </RowElement>
                         <RowElement>
@@ -366,6 +376,7 @@ export const InternalRewiews: FC<IDataInternalRewiews>=(propsy)=>{
                                 <option>
                                     Finalnd
                                 </option>
+                                <option>France</option>
                             </StyledSelect>
                         </RowElement>
                         <RowElement>
@@ -385,6 +396,7 @@ export const InternalRewiews: FC<IDataInternalRewiews>=(propsy)=>{
                                 <option>
                                     #Economy
                                 </option>
+                                <option>#Tax</option>
                             </StyledSelect>
                         </RowElement>
                         <RowElement>

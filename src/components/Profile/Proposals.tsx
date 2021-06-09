@@ -263,6 +263,7 @@ export const Proposals: FC<IDataProposal>=(propsy)=>{
                                 <option>
                                     Finalnd
                                 </option>
+                                <option>France</option>
                             </StyledSelect>
                         </RowElement>
                         <RowElement>
@@ -279,6 +280,7 @@ export const Proposals: FC<IDataProposal>=(propsy)=>{
                                 <option>
                                     #Health
                                 </option>
+                                <option>#Tax</option>
                             </StyledSelect>
                         </RowElement>
                         <RowElement>
@@ -298,6 +300,7 @@ export const Proposals: FC<IDataProposal>=(propsy)=>{
                                 <option>
                                     Company
                                 </option>
+                                <option>Racine</option>
                             </StyledSelect>
                         </RowElement>
                     </Row>
@@ -322,6 +325,7 @@ export const Proposals: FC<IDataProposal>=(propsy)=>{
                                 <option>
                                     Finalnd
                                 </option>
+                                <option>France</option>
                             </StyledSelect>
                         </RowElement>
                         <RowElement>
@@ -338,6 +342,7 @@ export const Proposals: FC<IDataProposal>=(propsy)=>{
                                 <option>
                                     #Health
                                 </option>
+                                <option>#Tax</option>
                             </StyledSelect>
                         </RowElement>
                         <RowElement>
@@ -357,6 +362,7 @@ export const Proposals: FC<IDataProposal>=(propsy)=>{
                                 <option>
                                     Company
                                 </option>
+                                <option>Racine</option>
                             </StyledSelect>
                         </RowElement>
                     </Row>
@@ -382,6 +388,7 @@ export const Proposals: FC<IDataProposal>=(propsy)=>{
                                     <option>
                                         Finalnd
                                     </option>
+                                    <option>France</option>
                                 </StyledSelect>
                             </RowElement>
                             <RowElement>
@@ -398,6 +405,7 @@ export const Proposals: FC<IDataProposal>=(propsy)=>{
                                     <option>
                                         #Health
                                     </option>
+                                    <option>#Tax</option>
                                 </StyledSelect>
                             </RowElement>
                             <RowElement>
@@ -417,6 +425,7 @@ export const Proposals: FC<IDataProposal>=(propsy)=>{
                                     <option>
                                         Company
                                     </option>
+                                    <option>Racine</option>
                                 </StyledSelect>
                             </RowElement>
                     </Row>

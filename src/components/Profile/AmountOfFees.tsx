@@ -223,6 +223,7 @@ export const AmountOfFees: FC<IDataAmount> = (propsy) => {
                             <option>CS 32</option>
                             <option>CS 56</option>
                             <option>CS 72</option>
+                            <option>CS 153</option>
                         </StyledSelect>
                     </RowElement>
                     <RowElement>
@@ -235,6 +236,7 @@ export const AmountOfFees: FC<IDataAmount> = (propsy) => {
                             <option>Something</option>
                             <option>Another one</option>
                             <option>Other</option>
+                            <option>Clifford chance</option>
                         </StyledSelect>
                     </RowElement>
                 </Row>
@@ -249,6 +251,7 @@ export const AmountOfFees: FC<IDataAmount> = (propsy) => {
                             <option>CS 32</option>
                             <option>CS 56</option>
                             <option>CS 72</option>
+                            <option>CS 153</option>
                         </StyledSelect>
                     </RowElement>
                     <RowElement>
@@ -261,6 +264,7 @@ export const AmountOfFees: FC<IDataAmount> = (propsy) => {
                             <option>Something</option>
                             <option>Another one</option>
                             <option>Other</option>
+                            <option>Clifford chance</option>
                         </StyledSelect>
                     </RowElement>
                 </Row>
@@ -275,6 +279,7 @@ export const AmountOfFees: FC<IDataAmount> = (propsy) => {
                             <option>CS 32</option>
                             <option>CS 56</option>
                             <option>CS 72</option>
+                            <option>CS 153</option>
                         </StyledSelect>
                     </RowElement>
                     <RowElement>
@@ -287,6 +292,7 @@ export const AmountOfFees: FC<IDataAmount> = (propsy) => {
                             <option>Something</option>
                             <option>Another one</option>
                             <option>Other</option>
+                            <option>Clifford chance</option>
                         </StyledSelect>
                     </RowElement>
                 </Row>
@@ -301,6 +307,7 @@ export const AmountOfFees: FC<IDataAmount> = (propsy) => {
                             <option>CS 32</option>
                             <option>CS 56</option>
                             <option>CS 72</option>
+                            <option>CS 153</option>
                         </StyledSelect>
                     </RowElement>
                     <RowElement>
@@ -313,6 +320,7 @@ export const AmountOfFees: FC<IDataAmount> = (propsy) => {
                             <option>Something</option>
                             <option>Another one</option>
                             <option>Other</option>
+                            <option>Clifford chance</option>
                         </StyledSelect>
                     </RowElement>
                 </Row>
@@ -327,6 +335,7 @@ export const AmountOfFees: FC<IDataAmount> = (propsy) => {
                             <option>CS 32</option>
                             <option>CS 56</option>
                             <option>CS 72</option>
+                            <option>CS 153</option>
                         </StyledSelect>
                     </RowElement>
                     <RowElement>
@@ -339,6 +348,7 @@ export const AmountOfFees: FC<IDataAmount> = (propsy) => {
                             <option>Something</option>
                             <option>Another one</option>
                             <option>Other</option>
+                            <option>Clifford chance</option>
                         </StyledSelect>
                     </RowElement>
                 </Row>

@@ -110,12 +110,12 @@ export const LatestPublication: FC = () =>{
         
 
                 <ArticlesContainer>                   
-                   <Article photo={fotoList.find(a=> a?.id === currentPost?.userId)?.url || ""} alt="User photo" 
-                   name={usersList?.find(a => a?.id === currentPost?.userId)?.name || ""} title={currentPost?.title || ""}/>
-                   <Article photo={fotoList.find(a=> a?.id === currentPost?.userId)?.url || ""} alt="User photo" 
-                   name={usersList?.find(a => a?.id === currentPost?.userId)?.name || ""} title={currentPost?.title || ""}/>
-                   <Article photo={fotoList.find(a=> a?.id === currentPost?.userId)?.url || ""} alt="User photo" 
-                   name={usersList?.find(a => a?.id === currentPost?.userId)?.name || ""} title={currentPost?.title || ""}/>
+                   <Article photo={fotoList.find(a=> a?.id === postList[2]?.userId)?.url || ""} alt="User photo" 
+                   name={usersList?.find(a => a?.id === postList[2]?.userId)?.name || ""} title={postList[2]?.title || ""}/>
+                   <Article photo={fotoList.find(a=> a?.id === postList[3]?.userId)?.url || ""} alt="User photo" 
+                   name={usersList?.find(a => a?.id === postList[3]?.userId)?.name || ""} title={postList[3]?.title || ""}/>
+                   <Article photo={fotoList.find(a=> a?.id === postList[10]?.userId)?.url || ""} alt="User photo" 
+                   name={usersList?.find(a => a?.id === postList[10]?.userId)?.name || ""} title={postList[10]?.title || ""}/>
                 </ArticlesContainer>
             <div>See more publications</div>
 
