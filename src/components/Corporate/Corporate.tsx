@@ -12,7 +12,7 @@ export const Corporate: FC = () =>{
     const dispatch = useDispatch();
     useEffect(()=>{
         dispatch<SetData>(setData("Corporate", "./icons/entities.png"))
-    });
+    },[]);
     const {
         data
       } = useSelector<IState, ITopMenuReducer>(

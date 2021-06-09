@@ -12,7 +12,7 @@ export const People: FC = () =>{
     const dispatch = useDispatch();
     useEffect(()=>{
         dispatch<SetData>(setData("People", "./icons/people.png"))
-    });
+    },[]);
     const {
         data
       } = useSelector<IState, ITopMenuReducer>(
